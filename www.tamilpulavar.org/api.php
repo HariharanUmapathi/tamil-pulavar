@@ -1,7 +1,7 @@
 ﻿<?php
 include("connection.php");
-$sq	   =	mysql_query("SELECT `api_hits` FROM `api_hits` WHERE `sno` = 1") or die(mysql_error());
-$ft_sq	=	mysql_fetch_array($sq);
+$sq	   =	mysqli_query($connection,"SELECT `api_hits` FROM `api_hits` WHERE `sno` = 1") or die(mysqli_error($connection));
+$ft_sq	=	mysqli_fetch_array($sq);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

@@ -3468,7 +3468,7 @@ public function exactjoin($words)
 		
 		/* Classify the Metre */
 		
-		$this->VenpaError = "";
+		$this->VenpaError = [];
 		
 		// Logging and Classifying Errors
 		
