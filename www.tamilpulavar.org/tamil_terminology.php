@@ -33,8 +33,8 @@ function call_term(nam,val)
 <?php
 include("connection.php");
 $value = $_POST['wrd'];
-$result_c_name = mysql_query("SELECT DISTINCT `name` FROM `common_words` ");
-while($row = mysql_fetch_array($result_c_name))
+$result_c_name = mysqli_query($connection,"SELECT DISTINCT `name` FROM `common_words` ");
+while($row = mysqli_fetch_array($result_c_name))
 {
 	$ta_names[] = 	$row['name'];
 	//$nam_ta	 =	$row['name'];
@@ -42,15 +42,15 @@ while($row = mysql_fetch_array($result_c_name))
 for($b=0;$b<count($ta_names);$b++)
 {
 	$nam_ta	 	= 	$ta_names[$b];
-	$qry_cw        =	mysql_query("(SELECT `meaning` FROM `common_words` WHERE `eword` = '$value' AND `name` = '$nam_ta') UNION (SELECT `meaning` FROM `kalai` WHERE `eword` = '$value' AND `name` = '$nam_ta')");
-	$count_wrds   = mysql_num_rows($qry_cw);
-	$qry_cw1        =	mysql_query("(SELECT `meaning` FROM `kalai_wrds` WHERE `eword` = '$value' AND `name` = '$nam_ta')");
-	$count_wrds1   = mysql_num_rows($qry_cw1);	
-	while($fet_cw  =	mysql_fetch_assoc($qry_cw))
+	$qry_cw        =	mysqli_query($connection,"(SELECT `meaning` FROM `common_words` WHERE `eword` = '$value' AND `name` = '$nam_ta') UNION (SELECT `meaning` FROM `kalai` WHERE `eword` = '$value' AND `name` = '$nam_ta')");
+	$count_wrds   = mysqli_num_rows($qry_cw);
+	$qry_cw1        =	mysqli_query($connection,"(SELECT `meaning` FROM `kalai_wrds` WHERE `eword` = '$value' AND `name` = '$nam_ta')");
+	$count_wrds1   = mysqli_num_rows($qry_cw1);	
+	while($fet_cw  =	mysqli_fetch_assoc($qry_cw))
 	{
 		$word_mean[$b]  = $fet_cw['meaning'];
 	}
-	while($fet_cw1  =	mysql_fetch_assoc($qry_cw1))
+	while($fet_cw1  =	mysqli_fetch_assoc($qry_cw1))
 	{
 		$word_mean1[$b] = $fet_cw1['meaning'];
 	}	

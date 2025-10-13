@@ -33,6 +33,6 @@ $nam 	 =	$_POST['name'];
 $addr	=	$_POST['addr'];
 $mob	 =	$_POST['cntct'];
 $e_id	=	$_POST['email'];
-mysql_query("INSERT INTO 'payment' (`sno`,`name`,`address`,`contact_no`,`amount`,`email`) values ('$nam','$addr','$mob','$e_id')") or die(mysql_error());
+mysqli_query($connection,"INSERT INTO 'payment' (`sno`,`name`,`address`,`contact_no`,`amount`,`email`) values ('$nam','$addr','$mob','$e_id')") or die(mysqli_error($connection));
 }
 ?>

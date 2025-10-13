@@ -63,8 +63,8 @@ $asai_detail = $p_p->DisplaySyllableWordClass();
 echo $asai_detail."<br>";
 //AND BINARY SUBSTRING(`trans`,-1) = '$end_char'
 $end_char		 = substr(T2R($sand_s),-1);
-$qry	=	mysql_query("SELECT `hdwrd` FROM `hwrd` WHERE `seer` = '$seer_detail'");
-while($fet = mysql_fetch_array($qry))
+$qry	=	mysqli_query($connection,"SELECT `hdwrd` FROM `hwrd` WHERE `seer` = '$seer_detail'");
+while($fet = mysqli_fetch_array($qry))
 {
 	$fet_wrds[]	=	$fet['hdwrd'];
 }

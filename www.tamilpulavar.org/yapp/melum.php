@@ -73,8 +73,8 @@ echo $_POST['val'];
      $val_en 	 = T2R($val); 	
 	 $f_char1    = substr($val_en,2,2);
 	 $f_char 	 = R2T($f_char1);
-	 $qry  =	mysql_query("SELECT `hdwrd` FROM `hwrd` WHERE `hdwrd` LIKE '_$f_char%' ")or die(mysql_error());
-	 while($fet1 = 	mysql_fetch_array($qry))
+	 $qry  =	mysqli_query($connection,"SELECT `hdwrd` FROM `hwrd` WHERE `hdwrd` LIKE '_$f_char%' ")or die(mysqli_error($connection));
+	 while($fet1 = 	mysqli_fetch_array($qry))
 		{
 			$chk = T2R($fet1['hdwrd']);
 			if($f_char1 == substr($chk,2,2))
@@ -95,8 +95,8 @@ echo $_POST['val'];
 	$val_en 	 = T2R($val); 	
 	$f_char1    = substr($val_en,0,2);
 	$f_char 	 = R2T($f_char1);
-	$qry  =	mysql_query("SELECT `hdwrd` FROM `hwrd` WHERE `hdwrd` LIKE '$f_char%'")or die(mysql_error());
-	while($fet1 = 	mysql_fetch_array($qry))
+	$qry  =	mysqli_query($connection,"SELECT `hdwrd` FROM `hwrd` WHERE `hdwrd` LIKE '$f_char%'")or die(mysqli_error($connection));
+	while($fet1 = 	mysqli_fetch_array($qry))
 		 {
 			 $chk = T2R($fet1['hdwrd']);
 			 if($f_char1 == substr($chk,0,2))

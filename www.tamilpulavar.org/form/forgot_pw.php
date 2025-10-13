@@ -33,7 +33,7 @@
 <?php if(isset($_POST['submit']))
 {	include('../connection.php');
 	$pass	=	md5($_POST['pwd']);
-	mysql_query("UPDATE `members` SET `password`='$pass' WHERE `email`='avsk7294.sa@gmail.com'");
+	mysqli_query($connection,"UPDATE `members` SET `password`='$pass' WHERE `email`='avsk7294.sa@gmail.com'");
 ?>
 <script>
 alert('successfully updated');

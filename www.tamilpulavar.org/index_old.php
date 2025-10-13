@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("connection.php");
-error_reporting(0);
+;
 ?>
 <!doctype html>
 <html lang="en">
@@ -504,13 +504,13 @@ height="150"/><br /><input name="verif_box" type="text"  class="form-control" id
 		//$val1 = rand(0,58069); 
 		srand(mktime(0, 0, 0));
 		$val1 = rand(0, 58069);
-		$qry = mysql_query("SELECT `eword`,`meaning` FROM `chennai_tam` WHERE `sno` = '$val1'")or die(mysql_error());
-		$fet = mysql_fetch_array($qry);
+		$qry = mysqli_query($connection,"SELECT `eword`,`meaning` FROM `chennai_tam` WHERE `sno` = '$val1'")or die(mysqli_error($connection));
+		$fet = mysqli_fetch_array($qry);
 		echo $fet['eword'];
 		echo "</br>";
 		echo $fet['meaning'];
-		$qry = mysql_query("SELECT `count` FROM `visitors`");
-		$fet = mysql_fetch_array($qry);
+		$qry = mysqli_query($connection,"SELECT `count` FROM `visitors`");
+		$fet = mysqli_fetch_array($qry);
 		$visit = $fet['count'];
 		?>	
 		</div>
@@ -521,8 +521,8 @@ height="150"/><br /><input name="verif_box" type="text"  class="form-control" id
         <?php
 		//$val1 = rand(0,58069); 
 		$val11 = rand(0, 140279);
-		$qry1 = mysql_query("SELECT `tword`,`meaning` FROM `chennai_tt` WHERE `sno` = '$val11'")or die(mysql_error());
-		$fet1 = mysql_fetch_array($qry1);
+		$qry1 = mysqli_query($connection,"SELECT `tword`,`meaning` FROM `chennai_tt` WHERE `sno` = '$val11'")or die(mysqli_error($connection));
+		$fet1 = mysqli_fetch_array($qry1);
 		echo $fet1['tword'];
 		echo "</br>";
 		echo $fet1['meaning'];
@@ -538,7 +538,7 @@ height="150"/><br /><input name="verif_box" type="text"  class="form-control" id
  if(!isset($_SESSION['nm']))
 {
 
-mysql_query("UPDATE `visitors` SET `count` = '$visit'+1");
+mysqli_query($connection,"UPDATE `visitors` SET `count` = '$visit'+1");
 ?>
 <script>
 $(window).load(function()

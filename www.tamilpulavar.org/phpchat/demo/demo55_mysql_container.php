@@ -5,12 +5,12 @@ $params = array();
 $params["serverid"] = md5(__FILE__); // calculate a unique id for this chat
 $params["nick"] = "guest".rand(1,1000);
 $params["container_type"] = "mysql";
-$params["container_cfg_mysql_host"]     = "localhost";        // default value is "localhost"
-$params["container_cfg_mysql_port"]     = 3306;               // default value is 3306
-$params["container_cfg_mysql_database"] = "phpfreechat";      // default value is "phpfreechat"
-$params["container_cfg_mysql_table"]    = "chat";             // default value is "phpfreechat"
-$params["container_cfg_mysql_username"] = "phpfreechat";      // default value is "root"
-$params["container_cfg_mysql_password"] = "yX7TZbZMUyZnXp6U"; // default value is ""
+$params["container_cfg_mysqli_host"]     = "localhost";        // default value is "localhost"
+$params["container_cfg_mysqli_port"]     = 3306;               // default value is 3306
+$params["container_cfg_mysqli_database"] = "phpfreechat";      // default value is "phpfreechat"
+$params["container_cfg_mysqli_table"]    = "chat";             // default value is "phpfreechat"
+$params["container_cfg_mysqli_username"] = "phpfreechat";      // default value is "root"
+$params["container_cfg_mysqli_password"] = "yX7TZbZMUyZnXp6U"; // default value is ""
 $chat = new phpFreeChat($params);
 
 ?>

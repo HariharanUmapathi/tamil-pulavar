@@ -18,8 +18,8 @@ function sentance($string,$pass2)
 			if(preg_match('/[\p{Tamil}]/u',$sentence))												
 				{
 			//echo $sentance."----------------insertion  <br>";
-			/*$fetch_sentances = mysql_query("SELECT * FROM `sentance` WHERE `sentances` = '$sentance'");
-			if(mysql_num_rows($fetch_sentances)) 
+			/*$fetch_sentances = mysqli_query($connection,"SELECT * FROM `sentance` WHERE `sentances` = '$sentance'");
+			if(mysqli_num_rows($fetch_sentances)) 
 			{
         	//echo nl2br("$string already exists \n");
    			} 
@@ -41,7 +41,7 @@ function sentance($string,$pass2)
 						if(strlen($last_word) > 15)
 						{
 						//echo $sentence."<br>";
-						mysql_query("INSERT INTO `sentance` (`sno`,`sentances`,`link_id`) VALUES ('NULL','$sentence','$pass2')");
+						mysqli_query($connection,"INSERT INTO `sentance` (`sno`,`sentances`,`link_id`) VALUES ('NULL','$sentence','$pass2')");
 						//}
 					 	}
 				     }

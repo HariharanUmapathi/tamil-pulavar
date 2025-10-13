@@ -141,8 +141,8 @@ if($_SESSION['id']=="")
 <?php
 include('../connection.php');
 $no = $_SESSION['id'];
-$result = mysql_query("SELECT `email`,`name` FROM `members` WHERE `sno`='$no'");
-$row = mysql_fetch_array($result);
+$result = mysqli_query($connection,"SELECT `email`,`name` FROM `members` WHERE `sno`='$no'");
+$row = mysqli_fetch_array($result);
 ?>
         <div class="content">
             <div class="container-fluid">
@@ -195,18 +195,18 @@ $row = mysql_fetch_array($result);
                             <div class="col-md-6">
                             <?php
 							$u_id	=	$_SESSION['id'];
-							$num	 =	mysql_query("SELECT COUNT(*) FROM `antonyms` WHERE `user_id` = '$u_id'");
-							$ct	  =	mysql_fetch_array($num);
+							$num	 =	mysqli_query($connection,"SELECT COUNT(*) FROM `antonyms` WHERE `user_id` = '$u_id'");
+							$ct	  =	mysqli_fetch_array($num);
 							?>
                             <h3>TOTAL WORDS PROVIDED BY YOU : <?php echo $ct['COUNT(*)']; ?></h3>
                             </div>
                             <div class="col-md-6">
                             <?php
-							mysql_query("SET @rank := 0") or die(mysql_error());
-							//$qry_rnk = mysql_query("SELECT @rank := @rank+1 AS `rank`, `user_id`, `total_words` FROM `rank_list` WHERE `user_id` = '$u_id' ORDER BY `total_words` DESC ") or die(mysql_error());
-							mysql_query("CREATE TEMPORARY TABLE IF NOT EXISTS `ranks` AS (SELECT @rank := @rank+1 AS `rank`, `user_id`, `total_words` FROM `rank_list` ORDER BY `total_words` DESC)")or die(mysql_error());
-							$qry_rnk 	  =  mysql_query("SELECT * FROM `ranks` WHERE `user_id` = '$u_id'")or die(mysql_error());
-							$qry_fetch	= mysql_fetch_array($qry_rnk);
+							mysqli_query($connection,"SET @rank := 0") or die(mysqli_error($connection));
+							//$qry_rnk = mysqli_query($connection,"SELECT @rank := @rank+1 AS `rank`, `user_id`, `total_words` FROM `rank_list` WHERE `user_id` = '$u_id' ORDER BY `total_words` DESC ") or die(mysqli_error($connection));
+							mysqli_query($connection,"CREATE TEMPORARY TABLE IF NOT EXISTS `ranks` AS (SELECT @rank := @rank+1 AS `rank`, `user_id`, `total_words` FROM `rank_list` ORDER BY `total_words` DESC)")or die(mysqli_error($connection));
+							$qry_rnk 	  =  mysqli_query($connection,"SELECT * FROM `ranks` WHERE `user_id` = '$u_id'")or die(mysqli_error($connection));
+							$qry_fetch	= mysqli_fetch_array($qry_rnk);
 							$rank		 = $qry_fetch['rank'];
 							?>
                             <h3>RANK : <?php echo $rank; ?></h3>
@@ -223,8 +223,8 @@ $row = mysql_fetch_array($result);
                             <div class="content">
                                 <div class="author">
                                 	<?php
-									$qry	  =	mysql_query("SELECT `image` FROM `members` WHERE `sno` = '$u_id'") or die(mysql_error());
-									$fet_qry  =	mysql_fetch_array($qry);
+									$qry	  =	mysqli_query($connection,"SELECT `image` FROM `members` WHERE `sno` = '$u_id'") or die(mysqli_error($connection));
+									$fet_qry  =	mysqli_fetch_array($qry);
 									$u_img	=	$fet_qry['image'];
 									if($u_img != "") 
 									{
@@ -351,7 +351,7 @@ if(isset($_POST["upload"]))
 		 {
 			echo "The file ". basename( $_FILES["img"]["name"]). " has been uploaded.";
 			$name	=	basename( $_FILES["img"]["name"]);
-			mysql_query("UPDATE `members` SET `image` = '$name' WHERE `sno` = '$u_id'")or die(mysql_error());
+			mysqli_query($connection,"UPDATE `members` SET `image` = '$name' WHERE `sno` = '$u_id'")or die(mysqli_error($connection));
 		 } 
 		else
 		 {
@@ -367,7 +367,7 @@ if(isset($_POST['submit']))
 	if($pwd == $cnfpwd)
 	{
 		$password = md5($pwd);
-		mysql_query("UPDATE `members` SET `password`='$password' WHERE `sno`='$sno'");
+		mysqli_query($connection,"UPDATE `members` SET `password`='$password' WHERE `sno`='$sno'");
 		echo "<script>alert('Your Password has been Changed');</script>";
 	}
 }

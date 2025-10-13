@@ -9,18 +9,15 @@
 <body>
 <?php
 $Tol = array ("m","n","o");
-ini_set('max_execution_time', 0);
-mysql_connect("localhost","root","");
-mysql_select_db("word");
+include_once("connection.php");
 for ($start=0;$start<3;$start++)
 {
 	$a=$Tol[$start];
 	$a="'".$a."%'";
 //	$a="'"."w"."%'";
 $qry_str="SELECT DISTINCT "."`eword`"." FROM "."`word`"." WHERE "."`eword`"." LIKE ".$a;
-$qry	=	mysql_query($qry_str)or die(mysql_error());
-mysql_query("SET NAMES 'utf8'");
-while($fet	=	mysql_fetch_array($qry))
+$qry	=	mysqli_query($connection,$qry_str)or die(mysqli_error($connection));
+while($fet	=	mysqli_fetch_array($qry))
 {
 $ewords[]	=	$fet['eword'];
 }
@@ -52,9 +49,9 @@ for($i=0;$i<count($ewords);$i++)
 	$txt  = str_replace("&nbsp;","",$txt);
 	$txt  = strip_tags($txt);
 	$txt  = trim($txt);	
-	$txt  = mysql_real_escape_string($txt);
+	$txt  = mysqli_real_escape_string($connection,$txt);
 	//$txt  = str_replace("\r","",$txt);
-	mysql_query("INSERT INTO `palsdict` (`sno`,`eword`,`meaning`) values ('','$ewords[$i]','$txt')")or die(mysql_error());
+	mysqli_query($connection,"INSERT INTO `palsdict` (`sno`,`eword`,`meaning`) values ('','$ewords[$i]','$txt')")or die(mysqli_error($connection));
 	//echo $txt; 
 	//echo "</br>";
 	/*if($i==10)

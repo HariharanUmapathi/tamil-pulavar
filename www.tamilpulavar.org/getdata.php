@@ -10,17 +10,17 @@
 include("connection.php");
 $val		=	$_GET['wrd'];
 $dict	   =	$_GET['dict'];
-$sq	   =	mysql_query("SELECT `api_hits` FROM `api_hits` WHERE `sno` = 1") or die(mysql_error());
-$ft_sq	=	mysql_fetch_array($sq);
+$sq	   =	mysqli_query($connection,"SELECT `api_hits` FROM `api_hits` WHERE `sno` = 1") or die(mysqli_error($connection));
+$ft_sq	=	mysqli_fetch_array($sq);
 $prev	 = 	$ft_sq['api_hits'];
-mysql_query("UPDATE `api_hits` SET `api_hits` = $prev+1 WHERE `sno` = 1") or die(mysql_error());
+mysqli_query($connection,"UPDATE `api_hits` SET `api_hits` = $prev+1 WHERE `sno` = 1") or die(mysqli_error($connection));
 //$cate	   =	$_GET['cate'];
 $site 	   =	 "<br /><br /><center><a name='tamilpulavar' href='http://www.tamilpulavar.org/' target = '_blank' style='alignment-adjust:right'><strong>Content - Provided By: tamilpulavar.org</strong></a></center>";
 if($dict == "செம்மொழி")
 {
 	$value		  =	$val;
-$result_c_name1 = mysql_query("SELECT  `topic` FROM `ilakiyam_search_oder` ORDER BY `order`");
-while($row1 = mysql_fetch_array($result_c_name1))
+$result_c_name1 = mysqli_query($connection,"SELECT  `topic` FROM `ilakiyam_search_oder` ORDER BY `order`");
+while($row1 = mysqli_fetch_array($result_c_name1))
      {
           $name_ter1[]  =	$row1['topic'];
 		  
@@ -30,12 +30,12 @@ while($row1 = mysql_fetch_array($result_c_name1))
 	 //print_r($name_ter1);
 	 for($q=0;$q<count($name_ter1);$q++)
 	 {
-		 $ta_names	 =	mysql_real_escape_string($name_ter1[$q]);
-	  	 $qry_cw       =	mysql_query("SELECT `meaning` FROM `ilakiyam` WHERE `hdwrd` = '$value' AND `topic` = '$ta_names'");
-		$count_wrds   =	mysql_num_rows($qry_cw);
+		 $ta_names	 =	mysqli_real_escape_string($connection,$name_ter1[$q]);
+	  	 $qry_cw       =	mysqli_query($connection,"SELECT `meaning` FROM `ilakiyam` WHERE `hdwrd` = '$value' AND `topic` = '$ta_names'");
+		$count_wrds   =	mysqli_num_rows($qry_cw);
 			if($count_wrds >= 1)
 			{
-				while($fet_cw  =	mysql_fetch_assoc($qry_cw))
+				while($fet_cw  =	mysqli_fetch_assoc($qry_cw))
 				{
 					$word_mean[$q][]  = $fet_cw['meaning'];
 					//echo $fet_cw['meaning']."<br>";
@@ -170,34 +170,34 @@ if($dict	==	"tamil-tamil")
 	echo "<br />";
 	echo "<div class='row'><div class='col-md-4 col-md-offset-4 col-xs-12'><h4 class='text-center text-success' style='font-size: 150%; font-weight: bold;'>$val</h4></div><br /></div>
 	<div class='row'><div class='col-md-10 col-md-offset-1'><table class='table table-responsive table-striped table-bordered '><tr><td>";
-	/*$sql	   =	mysql_query("SELECT `sentence` FROM `sentence` WHERE `sentence` LIKE '%$val%' LIMIT 4");
-	while($sql_ar	=	mysql_fetch_array($sql))
+	/*$sql	   =	mysqli_query("SELECT `sentence` FROM `sentence` WHERE `sentence` LIKE '%$val%' LIMIT 4");
+	while($sql_ar	=	mysqli_fetch_array($sql))
 	{
 		echo "-> ".$sql_ar['sentence'].".</br>";
 	}
 */	echo "</td></tr></table></div></div>";
-	$qry_lst = mysql_query("SELECT `table_name` FROM `table_name` WHERE `language`='tam' ORDER BY `order` ASC");
-$table_len  =    mysql_num_rows($qry_lst);
+	$qry_lst = mysqli_query($connection,"SELECT `table_name` FROM `table_name` WHERE `language`='tam' ORDER BY `order` ASC");
+$table_len  =    mysqli_num_rows($qry_lst);
 $i=0;
 $unused_tab = array('antonyms');
 $cont	   = array();
 $tab	=	0;	
-while($fet_val = mysql_fetch_assoc($qry_lst))
+while($fet_val = mysqli_fetch_assoc($qry_lst))
 {
 	$table = $fet_val['table_name'];
 	if(!in_array($table,$unused_tab))
 	{
-	$qry	    =	mysql_query("SELECT DISTINCT `meaning` FROM `$table` WHERE `tword` = '$val'")or die(mysql_error());
-	$qry1	   =	mysql_query("SELECT `full_name`,`link` FROM `table_name` WHERE `table_name` = '$table'")or die(mysql_error());
-	$fet_tabl   =	mysql_fetch_array($qry1);
+	$qry	    =	mysqli_query($connection,"SELECT DISTINCT `meaning` FROM `$table` WHERE `tword` = '$val'")or die(mysqli_error($connection));
+	$qry1	   =	mysqli_query($connection,"SELECT `full_name`,`link` FROM `table_name` WHERE `table_name` = '$table'")or die(mysqli_error($connection));
+	$fet_tabl   =	mysqli_fetch_array($qry1);
 	$table_name =	$fet_tabl['full_name'];
 	$link1[] 	   = 	$fet_tabl['link'];
 	$link_in1	   = 	$fet_tabl['link'];
-	if(mysql_num_rows($qry))
+	if(mysqli_num_rows($qry))
 	{
 		$cnt_tab[$tab]	  =	$table_name; 
 		$tab1 = 0;
-		while($fet	=	mysql_fetch_array($qry))
+		while($fet	=	mysqli_fetch_array($qry))
 		{
 		$val_m  =    $fet['meaning'];
 		$cont1[$tab][$tab1] = 	$val_m;
@@ -211,25 +211,25 @@ while($fet_val = mysql_fetch_assoc($qry_lst))
 	}
 	$tab++;	
 }
-$qry_lsteng = mysql_query("SELECT `table_name` FROM `table_name` WHERE `language`='eng'");
+$qry_lsteng = mysqli_query($connection,"SELECT `table_name` FROM `table_name` WHERE `language`='eng'");
 $tab2	=0;
-while($fet_valeng = mysql_fetch_assoc($qry_lsteng))
+while($fet_valeng = mysqli_fetch_assoc($qry_lsteng))
 {
 		$table 	  = 	$fet_valeng['table_name'];
 		if($val != "")
 		{
-		$qry	    =	mysql_query("SELECT  `meaning`,`eword` FROM `$table` WHERE `meaning` LIKE '%$val%' AND `meaning` NOT LIKE '%_$val_%'")or die(mysql_error());
+		$qry	    =	mysqli_query($connection,"SELECT  `meaning`,`eword` FROM `$table` WHERE `meaning` LIKE '%$val%' AND `meaning` NOT LIKE '%_$val_%'")or die(mysqli_error($connection));
 		}
-		$qry1	   =	mysql_query("SELECT `full_name`,`link` FROM `table_name` WHERE `table_name` = '$table'")or die(mysql_error());
-		$fet_tabl   =	mysql_fetch_array($qry1);
+		$qry1	   =	mysqli_query($connection,"SELECT `full_name`,`link` FROM `table_name` WHERE `table_name` = '$table'")or die(mysqli_error($connection));
+		$fet_tabl   =	mysqli_fetch_array($qry1);
 		$table_name =	$fet_tabl['full_name'];
 		$link[] 	   = 	$fet_tabl['link'];
 		$link_in 	   = 	$fet_tabl['link'];
-		if(mysql_num_rows($qry))
+		if(mysqli_num_rows($qry))
 		{
 			$cnt_tab1[$tab2]	  =	$table_name; 
 			$tab11 = 0;
-			while($fet	   =	mysql_fetch_array($qry))
+			while($fet	   =	mysqli_fetch_array($qry))
 			{
 				$val_m  	 =    $fet['eword'];
 				$val_mean  =    $fet['meaning']; 
@@ -328,21 +328,21 @@ elseif($dict == "english-tamil")
 {
 	echo "<br />";
 	echo "<div class='row'><div class='col-md-4 col-md-offset-4  col-xs-12'><h4 class='text-center text-success' style='font-size: 150%; font-weight: bold;'>$val</h4></div><br />";
-	$qry_lst = mysql_query("SELECT `table_name` FROM `table_name` WHERE `language`='eng'");
-	$table_len  =    mysql_num_rows($qry_lst);
+	$qry_lst = mysqli_query($connection,"SELECT `table_name` FROM `table_name` WHERE `language`='eng'");
+	$table_len  =    mysqli_num_rows($qry_lst);
 	$i=0;
 	
-	while($fet_val = mysql_fetch_assoc($qry_lst))
+	while($fet_val = mysqli_fetch_assoc($qry_lst))
 	{
 		$table	  =	$fet_val['table_name'];
-		$qry	    =	mysql_query("SELECT `meaning` FROM `$table` WHERE `eword` = '$val'")or die(mysql_error());
-		$qry1	   =	mysql_query("SELECT `full_name`,`link` FROM `table_name` WHERE `table_name` = '$table'")or die(mysql_error());
-		$fet_tabl   =	mysql_fetch_array($qry1);
+		$qry	    =	mysqli_query($connection,"SELECT `meaning` FROM `$table` WHERE `eword` = '$val'")or die(mysqli_error($connection));
+		$qry1	   =	mysqli_query($connection,"SELECT `full_name`,`link` FROM `table_name` WHERE `table_name` = '$table'")or die(mysqli_error($connection));
+		$fet_tabl   =	mysqli_fetch_array($qry1);
 		$table_name =	$fet_tabl['full_name'];
 		$link 	   = 	$fet_tabl['link'];
-		if(mysql_num_rows($qry))
+		if(mysqli_num_rows($qry))
 		{
-			$fet	=	mysql_fetch_array($qry);
+			$fet	=	mysqli_fetch_array($qry);
 			$val_m  =    $fet['meaning'];
 			$cont[] = "<div class='col-md-6 col-xs-12'><table  class='table table-responsive table-striped table-bordered '><tr><td><a href='$link' target='_blank'><h4 style='color:#f45016;'>$table_name</h4></a></td></tr><tr><td>".$val_m."</td></tr></table></div>";
 		}

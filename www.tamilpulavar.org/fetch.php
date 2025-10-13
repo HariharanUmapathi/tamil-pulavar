@@ -122,8 +122,8 @@ while($fet_val = mysqli_fetch_assoc($qry_lst))
 				/*if(trim($table_name) == "சதுரகராதி")
 				{
 					//echo $val_m;
-					$quer_sathu	=	mysql_query("SELECT `table_name` FROM `sathu_peyar` WHERE `meaning` = '$val_m'");
-					while($row_sath	  =	mysql_fetch_array($quer_sathu))
+					$quer_sathu	=	mysqli_query("SELECT `table_name` FROM `sathu_peyar` WHERE `meaning` = '$val_m'");
+					while($row_sath	  =	mysqli_fetch_array($quer_sathu))
 					{
 						$table_sathu	    =	"<b class='text-info'>".$row_sath['table_name']."</b><br />";
 					}

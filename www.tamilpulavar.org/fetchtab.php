@@ -18,7 +18,7 @@ if(strpos($tab, 'http') !== false)
 }
 elseif($tab == "tam_com")
 {
-	call_comwrd($val);
+	call_comwrd($val,$connection);
 }
 else
 {

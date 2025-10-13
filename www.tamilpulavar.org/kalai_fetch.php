@@ -7,28 +7,28 @@
 
 <body>
  <?php
- //error_reporting(0);
+ //;
  include('connection.php');
 	$ta_names  = $_POST['nam'];
 	$value  = $_POST['val'];		
 			echo '<div>';
 			
            //echo '<h3 class="panel-title">'.$ta_names.'</h3>';
-            $qry_cw        =	mysql_query("(SELECT `eword` FROM `common_words` WHERE `meaning` LIKE '%$value%' AND `name` = '$ta_names')");
-			$count_wrds   = mysql_num_rows($qry_cw);
-			 $qry_cw1        =	mysql_query("(SELECT `eword` FROM `kalai_wrds` WHERE `meaning` LIKE '%$value%' AND `name` = '$ta_names')");
-			$count_wrds1   = mysql_num_rows($qry_cw1);
+            $qry_cw        =	mysqli_query($connection,"(SELECT `eword` FROM `common_words` WHERE `meaning` LIKE '%$value%' AND `name` = '$ta_names')");
+			$count_wrds   = mysqli_num_rows($qry_cw);
+			 $qry_cw1        =	mysqli_query($connection,"(SELECT `eword` FROM `kalai_wrds` WHERE `meaning` LIKE '%$value%' AND `name` = '$ta_names')");
+			$count_wrds1   = mysqli_num_rows($qry_cw1);
 			if($count_wrds >= 1 || $count_wrds1 >= 1)
 			{
 				echo '<h3 class="text-success">General Definition</h3>';
-				while($fet_cw  =	mysql_fetch_assoc($qry_cw))
+				while($fet_cw  =	mysqli_fetch_assoc($qry_cw))
 				{
 					$word_mean  = $fet_cw['eword'];
 					
 					echo '<p class="glyphicon glyphicon-ok">&nbsp;&nbsp;'.$word_mean.'</p><br>';			    
 				}
 				echo '<a href="http://www.tamilvu.org/" target="_blank"><h3 class="text-success">TVA Technical Terminology</h3></a>';
-				while($fet_cw1  =	mysql_fetch_assoc($qry_cw1))
+				while($fet_cw1  =	mysqli_fetch_assoc($qry_cw1))
 				{
 					$word_mean1  = $fet_cw1['eword'];
 				

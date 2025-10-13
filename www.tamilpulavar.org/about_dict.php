@@ -18,8 +18,8 @@
 <?php
 include("connection.php");
 $dict_name = $_GET['dict'];
-$result_about = mysql_query("SELECT `detail`,`full_name` from `table_name` WHERE `table_name`='$dict_name'");
-$row_about = mysql_fetch_array($result_about);
+$result_about = mysqli_query("SELECT `detail`,`full_name` from `table_name` WHERE `table_name`='$dict_name'");
+$row_about = mysqli_fetch_array($result_about);
 $detail = $row_about['detail'];
 $full_name = $row_about['full_name'];
 $findme = "htt";

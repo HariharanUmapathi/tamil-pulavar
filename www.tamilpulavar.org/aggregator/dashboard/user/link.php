@@ -1,6 +1,6 @@
 <?php 
 @session_start();
-error_reporting(0);
+;
 ini_set('max_execution_time',0);
 if($_SESSION['user_id'] == "")
 {
@@ -19,8 +19,8 @@ $user_id = $_SESSION['user_id'];
 	date_default_timezone_set("Asia/Kolkata"); 
 	include("../../connection.php");
 	$url1=$_POST['url'];
-	$dupesql_check11 = mysql_query ("SELECT * FROM `links` where (`links`='$url1')");
-	if(mysql_num_rows($dupesql_check11) != 0)
+	$dupesql_check11 = mysqli_query($connection,"SELECT * FROM `links` where (`links`='$url1')");
+	if(mysqli_num_rows($dupesql_check11) != 0)
 	{
 		echo "0";
 		exit;
@@ -48,8 +48,8 @@ $user_id = $_SESSION['user_id'];
 		//exit;
 		$dupesql = "SELECT * FROM `links` where (links='$base_url')";
 		$r=0; $rr = 0;
-	  	$duperaw = mysql_query($dupesql);
-	    if( mysql_num_rows($duperaw) ) 
+	  	$duperaw = mysqli_query($connection,$dupesql);
+	    if( mysqli_num_rows($duperaw) ) 
 		{
         //echo nl2br("$string already exists \n");
    		 } 
@@ -57,7 +57,7 @@ $user_id = $_SESSION['user_id'];
 		{
 			$link_id = time() . rand(12*55, 134*54);
 			$date = date('d-m-Y H:i:s');
-			mysql_query("INSERT INTO `links` (`id`,`links`,`links_id`,`user_id`,`created_at`) VALUES ('NULL','$url1','$link_id','$user_id','$date')");
+			mysqli_query($connection,"INSERT INTO `links` (`id`,`links`,`links_id`,`user_id`,`created_at`) VALUES ('NULL','$url1','$link_id','$user_id','$date')");
 		}
 			$html = file_get_contents($base_url);
 			//Create a new DOM document
@@ -96,8 +96,8 @@ $user_id = $_SESSION['user_id'];
 			//exit;
 		$random = time() . rand(10*48, 100*98);
 	  	$dupesql6 = "SELECT * FROM `sublinks` where (`sublink`='$fetch_link')";
-	  	$duperaw6 = mysql_query($dupesql6);
-	    if(mysql_num_rows($duperaw6)) 
+	  	$duperaw6 = mysqli_query($connection,$dupesql6);
+	    if(mysqli_num_rows($duperaw6)) 
 		{
         //echo nl2br("$string already exists \n");
    		} 
@@ -107,10 +107,10 @@ $user_id = $_SESSION['user_id'];
 		if(strpos($fetch_link,$external_url)!== false) 
 		{
 			//echo "hai";
-		$id=mysql_query("SELECT `links_id` FROM `links` WHERE `links`='$url1'")or die(mysql_error());
-		$row = mysql_fetch_array($id);
+		$id=mysqli_query($connection,"SELECT `links_id` FROM `links` WHERE `links`='$url1'")or die(mysqli_error($connection));
+		$row = mysqli_fetch_array($id);
 		$final_id=$row['links_id'];
-	 	mysql_query("INSERT INTO `sublinks` (`sno`,`sublink`,`sublink_id`,`mainlink_id`,`checked`,`finished`,`user_id`) VALUES     ('NULL','$fetch_link','$random','$final_id','0','0','$user_id')")or die(mysql_error());
+	 	mysqli_query($connection,"INSERT INTO `sublinks` (`sno`,`sublink`,`sublink_id`,`mainlink_id`,`checked`,`finished`,`user_id`) VALUES     ('NULL','$fetch_link','$random','$final_id','0','0','$user_id')")or die(mysqli_error($connection));
 		}
 		}
 	}	
@@ -129,12 +129,12 @@ $user_id = $_SESSION['user_id'];
 	include('word_aggregation.php');
 	// for continous execution of link
 	$v = 0;
-	function recu($user_id,$finals_ids)
+	function recu($user_id,$finals_ids,$connection)
 	{
 	$r=0;
 	$final_id = $finals_ids;
-	$results = mysql_query("SELECT * FROM `sublinks` WHERE `user_id`='$user_id' AND `checked` = '0' AND `mainlink_id`	='$final_id'");
-	while($row_link = mysql_fetch_assoc($results))
+	$results = mysqli_query($connection,"SELECT * FROM `sublinks` WHERE `user_id`='$user_id' AND `checked` = '0' AND `mainlink_id`	='$final_id'");
+	while($row_link = mysqli_fetch_assoc($results))
 	{
 		$link_sub[$r] = $row_link['sublink'];
 		$sublink_id[$r] = $row_link['sublink_id'];
@@ -187,8 +187,8 @@ $user_id = $_SESSION['user_id'];
  			}
 		$random = time() . rand(10*48, 100*98);
 	  	$dupesql = "SELECT * FROM `sublinks` where (sublink='$fetch_link')";
-	  	$duperaw = mysql_query($dupesql);
-	    if( mysql_num_rows($duperaw) ) 
+	  	$duperaw = mysqli_query($connection,$dupesql);
+	    if( mysqli_num_rows($duperaw) ) 
 		{
         //echo nl2br("$string already exists \n");
    		 } 
@@ -197,12 +197,12 @@ $user_id = $_SESSION['user_id'];
 			if (strpos($fetch_link,$external_url ) !== false) 
 		{
 		
-	 	mysql_query("INSERT INTO `sublinks` (`sno`,`sublink`,`sublink_id`,`mainlink_id`,`checked`,`finished`,`user_id`) VALUES     ('NULL','$fetch_link','$random','$final_id','0','0','$user_id')")or die(mysql_error());
+	 	mysqli_query($connection,"INSERT INTO `sublinks` (`sno`,`sublink`,`sublink_id`,`mainlink_id`,`checked`,`finished`,`user_id`) VALUES     ('NULL','$fetch_link','$random','$final_id','0','0','$user_id')")or die(mysqli_error($connection));
 		}
 		}
 	}	
 	}
-	mysql_query("UPDATE `sublinks` SET `checked`='1' WHERE `sublink_id` = '$sublink_id[$p]' ");	
+	mysqli_query($connection,"UPDATE `sublinks` SET `checked`='1' WHERE `sublink_id` = '$sublink_id[$p]' ");	
 	//echo "No Of files processed".$v++;	
 	}
 	}
@@ -212,23 +212,23 @@ $user_id = $_SESSION['user_id'];
 	
 	
 	link:
-	$id=mysql_query("SELECT `links_id` FROM `links` WHERE `links`='$url1'")or die(mysql_error());
-	$row = mysql_fetch_array($id);
+	$id=mysqli_query($connection,"SELECT `links_id` FROM `links` WHERE `links`='$url1'")or die(mysqli_error($connection));
+	$row = mysqli_fetch_array($id);
 	$finals_ids=$row['links_id'];
-	$results_final = mysql_query("SELECT * FROM `sublinks` WHERE `user_id`='$user_id' AND `checked` = '0' AND `mainlink_id`='$finals_ids'");
-	$count_final = mysql_num_rows($results_final);
+	$results_final = mysqli_query($connection,"SELECT * FROM `sublinks` WHERE `user_id`='$user_id' AND `checked` = '0' AND `mainlink_id`='$finals_ids'");
+	$count_final = mysqli_num_rows($results_final);
 	if($count_final != 0)
 	{
 	recu($user_id,$finals_ids);
-	$results_final11 = mysql_query("SELECT * FROM `sublinks` WHERE `user_id`='$user_id' AND `checked` = '1' AND `mainlink_id`='$finals_ids'"    );
+	$results_final11 = mysqli_query($connection,"SELECT * FROM `sublinks` WHERE `user_id`='$user_id' AND `checked` = '1' AND `mainlink_id`='$finals_ids'"    );
 	//mb_internal_encoding("UTF-8");
-	while($res_row = mysql_fetch_assoc($results_final11))
+	while($res_row = mysqli_fetch_assoc($results_final11))
 	{
 		$string = $res_row['sublink'];
 		$pass2 = $res_row['sublink_id'];
 		sentance($string,$pass2);
 		word($string);
-		mysql_query("UPDATE `sublinks` SET `finished`='1' WHERE `sublink_id`='$pass2'");
+		mysqli_query($connection,"UPDATE `sublinks` SET `finished`='1' WHERE `sublink_id`='$pass2'");
 		//include("../../connection.php");
 	}
 	goto link;

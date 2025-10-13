@@ -1,7 +1,7 @@
 ﻿<?php
 include("connection.php");
 session_start();
-error_reporting(0);
+;
 $val = $_POST['typeahead'];
 $keybrd =$_POST['keybrd'];
 $_SESSION['ty_key']=$keybrd;

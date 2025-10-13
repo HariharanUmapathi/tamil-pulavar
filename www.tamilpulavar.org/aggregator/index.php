@@ -264,8 +264,8 @@ if(isset($_POST['submit']))
 include ("connection.php");
 $user_name = $_POST['user_name'];
 $password = $_POST['password'];
-$results = mysql_query("SELECT `role`,`user_id` FROM `members` WHERE `user_name`='$user_name' AND `password`='$password'");
-$rows = mysql_fetch_assoc($results);
+$results = mysqli_query($connection,"SELECT `role`,`user_id` FROM `members` WHERE `user_name`='$user_name' AND `password`='$password'");
+$rows = mysqli_fetch_assoc($results);
 $role = $rows['role'];
 $user_id = $rows['user_id'];
 $_SESSION["user_id"] = $user_id;
@@ -312,15 +312,15 @@ $old_password = $_POST['old_password'];
 $new_password = $_POST['new_password'];
 $new_re_password = $_POST['new_re_password'];
 
-$results = mysql_query("SELECT `user_name`,`password`,`user_id` FROM `members` WHERE `user_name`='$user_name' AND `password`='$old_password'");
-$acount = mysql_num_rows($results);
-$rows = mysql_fetch_array($results);
+$results = mysqli_query($connection,"SELECT `user_name`,`password`,`user_id` FROM `members` WHERE `user_name`='$user_name' AND `password`='$old_password'");
+$acount = mysqli_num_rows($results);
+$rows = mysqli_fetch_array($results);
 $user_id = $rows['user_id'];
 if($acount == 1)
 {
 	if($new_password == $new_re_password)
 	{
-	mysql_query("UPDATE `members` SET `password`='$new_password' WHERE `user_id`='$user_id'");
+	mysqli_query($connection,"UPDATE `members` SET `password`='$new_password' WHERE `user_id`='$user_id'");
 	echo "<script>alert('Password Changed Successfully');</script>";
 	}
 	else

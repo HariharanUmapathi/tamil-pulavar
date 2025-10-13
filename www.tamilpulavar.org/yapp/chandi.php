@@ -12,8 +12,8 @@ include("../connection.php");
 $sand	=	$_POST['sand'];
 $p_p = new Yappuanalyzer($sand);
 $seer_detail = $p_p->seeronly();
-$qry	=	mysql_query("SELECT `hdwrd` FROM `hwrd` WHERE `seer` = '$seer_detail'");
-while($fet = mysql_fetch_array($qry))
+$qry	=	mysqli_query($connection,"SELECT `hdwrd` FROM `hwrd` WHERE `seer` = '$seer_detail'");
+while($fet = mysqli_fetch_array($qry))
 {?>
 <form id="myform" method="post" action="common.php">
   <input type="hidden" name="typeahead" value="<?php echo $fet['hdwrd']; ?>" /> 

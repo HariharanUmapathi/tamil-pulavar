@@ -33,8 +33,8 @@ if($_SESSION['user_id'] == "")
 <div class="col-sm-3">
     <select class="form-control" name="keyword">
     <?php include("../connection.php"); 
-	$results = mysql_query("SELECT * FROM `keywords`");
-	while($row = mysql_fetch_assoc($results))
+	$results = mysqli_query($connection,"SELECT * FROM `keywords`");
+	while($row = mysqli_fetch_assoc($results))
 	{
 		$key = $row['keywords'];
 		?>

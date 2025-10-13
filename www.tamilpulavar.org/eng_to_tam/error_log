@@ -20381,35 +20381,35 @@
 [04-Aug-2016 07:50:33 Etc/GMT] PHP Warning:  include(PHP-Stanford-NLP-master/connection.php): failed to open stream: No such file or directory in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 21
 [04-Aug-2016 07:50:33 Etc/GMT] PHP Warning:  include(PHP-Stanford-NLP-master/connection.php): failed to open stream: No such file or directory in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 21
 [04-Aug-2016 07:50:33 Etc/GMT] PHP Warning:  include(): Failed opening 'PHP-Stanford-NLP-master/connection.php' for inclusion (include_path='.:/opt/alt/php54/usr/share/pear:/opt/alt/php54/usr/share/php') in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 21
-[04-Aug-2016 07:50:33 Etc/GMT] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 22
-[04-Aug-2016 07:50:33 Etc/GMT] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 22
-[04-Aug-2016 07:50:33 Etc/GMT] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 23
+[04-Aug-2016 07:50:33 Etc/GMT] PHP Warning:  mysqli_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 22
+[04-Aug-2016 07:50:33 Etc/GMT] PHP Warning:  mysqli_query(): A link to the server could not be established in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 22
+[04-Aug-2016 07:50:33 Etc/GMT] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be resource, boolean given in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 23
 [04-Aug-2016 07:50:33 Etc/GMT] PHP Notice:  Undefined variable: sno in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 35
 [04-Aug-2016 08:02:03 Etc/GMT] PHP Warning:  include(PHP-Stanford-NLP-master/connection.php): failed to open stream: No such file or directory in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 21
 [04-Aug-2016 08:02:03 Etc/GMT] PHP Warning:  include(PHP-Stanford-NLP-master/connection.php): failed to open stream: No such file or directory in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 21
 [04-Aug-2016 08:02:03 Etc/GMT] PHP Warning:  include(): Failed opening 'PHP-Stanford-NLP-master/connection.php' for inclusion (include_path='.:/opt/alt/php54/usr/share/pear:/opt/alt/php54/usr/share/php') in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 21
-[04-Aug-2016 08:02:03 Etc/GMT] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 22
-[04-Aug-2016 08:02:03 Etc/GMT] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 22
-[04-Aug-2016 08:02:03 Etc/GMT] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 23
+[04-Aug-2016 08:02:03 Etc/GMT] PHP Warning:  mysqli_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 22
+[04-Aug-2016 08:02:03 Etc/GMT] PHP Warning:  mysqli_query(): A link to the server could not be established in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 22
+[04-Aug-2016 08:02:03 Etc/GMT] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be resource, boolean given in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 23
 [04-Aug-2016 08:02:03 Etc/GMT] PHP Notice:  Undefined variable: sno in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 35
 [04-Aug-2016 08:02:06 Etc/GMT] PHP Warning:  include(PHP-Stanford-NLP-master/connection.php): failed to open stream: No such file or directory in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 21
 [04-Aug-2016 08:02:06 Etc/GMT] PHP Warning:  include(PHP-Stanford-NLP-master/connection.php): failed to open stream: No such file or directory in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 21
 [04-Aug-2016 08:02:06 Etc/GMT] PHP Warning:  include(): Failed opening 'PHP-Stanford-NLP-master/connection.php' for inclusion (include_path='.:/opt/alt/php54/usr/share/pear:/opt/alt/php54/usr/share/php') in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 21
-[04-Aug-2016 08:02:06 Etc/GMT] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 22
-[04-Aug-2016 08:02:06 Etc/GMT] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 22
-[04-Aug-2016 08:02:06 Etc/GMT] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 23
+[04-Aug-2016 08:02:06 Etc/GMT] PHP Warning:  mysqli_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 22
+[04-Aug-2016 08:02:06 Etc/GMT] PHP Warning:  mysqli_query(): A link to the server could not be established in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 22
+[04-Aug-2016 08:02:06 Etc/GMT] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be resource, boolean given in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 23
 [04-Aug-2016 08:02:06 Etc/GMT] PHP Notice:  Undefined variable: sno in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/check_word.php on line 35
-[24-Nov-2016 12:29:51 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
-[24-Nov-2016 12:30:32 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
-[24-Nov-2016 12:31:30 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[24-Nov-2016 12:29:51 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[24-Nov-2016 12:30:32 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[24-Nov-2016 12:31:30 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
 [24-Nov-2016 12:31:30 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_sp_inf.php on line 264
 [24-Nov-2016 12:31:30 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_sp_inf.php on line 264
-[24-Nov-2016 12:32:01 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[24-Nov-2016 12:32:01 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
 [24-Nov-2016 12:32:01 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 506
 [24-Nov-2016 12:32:01 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 506
 [24-Nov-2016 12:32:01 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 522
 [24-Nov-2016 12:32:01 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 522
-[24-Nov-2016 12:32:37 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[24-Nov-2016 12:32:37 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
 [24-Nov-2016 12:32:37 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 506
 [24-Nov-2016 12:32:37 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 524
 [24-Nov-2016 12:32:37 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 524
@@ -20419,26 +20419,26 @@
 [24-Nov-2016 12:32:37 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 524
 [24-Nov-2016 12:32:37 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 524
 [24-Nov-2016 12:32:37 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 524
-[24-Nov-2016 12:32:54 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
-[24-Nov-2016 12:58:40 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[24-Nov-2016 12:32:54 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[24-Nov-2016 12:58:40 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
 [24-Nov-2016 12:58:40 Etc/GMT] PHP Notice:  Undefined variable: f_ev in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 440
 [24-Nov-2016 12:58:40 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 440
 [24-Nov-2016 12:58:40 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 506
 [24-Nov-2016 12:58:40 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 510
 [24-Nov-2016 12:58:40 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 510
-[24-Nov-2016 12:59:16 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[24-Nov-2016 12:59:16 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
 [24-Nov-2016 12:59:16 Etc/GMT] PHP Notice:  Undefined variable: f_ev in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 440
 [24-Nov-2016 12:59:16 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 440
 [24-Nov-2016 12:59:16 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 506
 [24-Nov-2016 12:59:16 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 510
 [24-Nov-2016 12:59:16 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 510
-[24-Nov-2016 12:59:30 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[24-Nov-2016 12:59:30 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
 [24-Nov-2016 12:59:30 Etc/GMT] PHP Notice:  Undefined variable: f_ev in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 440
 [24-Nov-2016 12:59:30 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 440
 [24-Nov-2016 12:59:30 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 506
 [24-Nov-2016 12:59:30 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 510
 [24-Nov-2016 12:59:30 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 510
-[24-Nov-2016 13:00:41 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[24-Nov-2016 13:00:41 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
 [24-Nov-2016 13:00:41 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 506
 [24-Nov-2016 13:00:41 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 524
 [24-Nov-2016 13:00:41 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 524
@@ -20452,8 +20452,8 @@
 [24-Nov-2016 13:00:41 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 524
 [24-Nov-2016 13:00:41 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 524
 [24-Nov-2016 13:00:41 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 524
-[24-Nov-2016 13:00:52 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
-[24-Nov-2016 13:01:37 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[24-Nov-2016 13:00:52 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[24-Nov-2016 13:01:37 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
 [24-Nov-2016 13:01:37 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 506
 [24-Nov-2016 13:01:37 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 524
 [24-Nov-2016 13:01:37 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 524
@@ -20467,19 +20467,19 @@
 [24-Nov-2016 13:01:37 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 524
 [24-Nov-2016 13:01:37 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 524
 [24-Nov-2016 13:01:37 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/process_inf.php on line 524
-[24-Nov-2016 13:01:59 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
-[24-Nov-2016 13:02:18 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
-[24-Nov-2016 13:07:27 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
-[24-Nov-2016 14:15:30 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
-[26-Nov-2016 13:35:43 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
-[26-Nov-2016 13:36:05 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[24-Nov-2016 13:01:59 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[24-Nov-2016 13:02:18 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[24-Nov-2016 13:07:27 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[24-Nov-2016 14:15:30 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.sorkalanjiyam.in/eng_to_tam/connection.php on line 2
+[26-Nov-2016 13:35:43 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[26-Nov-2016 13:36:05 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [26-Nov-2016 13:36:05 Etc/GMT] PHP Notice:  Undefined variable: f_ev in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 440
 [26-Nov-2016 13:36:05 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 440
 [26-Nov-2016 13:36:05 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [26-Nov-2016 13:36:05 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [26-Nov-2016 13:36:05 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
 [26-Nov-2016 13:36:05 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
-[26-Nov-2016 13:36:21 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[26-Nov-2016 13:36:21 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [26-Nov-2016 13:36:21 Etc/GMT] PHP Notice:  Undefined variable: t_no in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 316
 [26-Nov-2016 13:36:21 Etc/GMT] PHP Notice:  Undefined variable: t_no in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 316
 [26-Nov-2016 13:36:21 Etc/GMT] PHP Notice:  Undefined variable: t_no in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 358
@@ -20497,50 +20497,50 @@
 [26-Nov-2016 13:36:21 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [26-Nov-2016 13:36:21 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 510
 [26-Nov-2016 13:36:21 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 510
-[26-Nov-2016 13:36:22 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
-[26-Nov-2016 19:50:39 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[26-Nov-2016 13:36:22 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[26-Nov-2016 19:50:39 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [26-Nov-2016 19:50:39 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [26-Nov-2016 19:50:39 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [26-Nov-2016 19:50:39 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
 [26-Nov-2016 19:50:39 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
-[26-Nov-2016 19:50:39 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[26-Nov-2016 19:50:39 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [26-Nov-2016 19:50:39 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
 [26-Nov-2016 19:50:39 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
-[26-Nov-2016 19:50:48 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[26-Nov-2016 19:50:48 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [26-Nov-2016 19:50:48 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [26-Nov-2016 19:50:48 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [26-Nov-2016 19:50:48 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
 [26-Nov-2016 19:50:48 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
-[26-Nov-2016 19:50:48 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[26-Nov-2016 19:50:48 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [26-Nov-2016 19:50:48 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
 [26-Nov-2016 19:50:48 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
-[26-Nov-2016 19:50:54 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[26-Nov-2016 19:50:54 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [26-Nov-2016 19:50:54 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [26-Nov-2016 19:50:54 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [26-Nov-2016 19:50:54 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
 [26-Nov-2016 19:50:54 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
-[26-Nov-2016 19:50:54 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[26-Nov-2016 19:50:54 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [26-Nov-2016 19:50:54 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
 [26-Nov-2016 19:50:54 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
-[26-Nov-2016 19:51:01 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[26-Nov-2016 19:51:01 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [26-Nov-2016 19:51:01 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [26-Nov-2016 19:51:01 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [26-Nov-2016 19:51:01 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
 [26-Nov-2016 19:51:01 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
-[26-Nov-2016 19:51:01 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[26-Nov-2016 19:51:01 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [26-Nov-2016 19:51:01 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
 [26-Nov-2016 19:51:01 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
-[26-Nov-2016 19:51:17 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[26-Nov-2016 19:51:17 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [26-Nov-2016 19:51:17 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [26-Nov-2016 19:51:17 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [26-Nov-2016 19:51:17 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
 [26-Nov-2016 19:51:17 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
-[26-Nov-2016 19:52:37 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[26-Nov-2016 19:52:37 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [26-Nov-2016 19:52:37 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [26-Nov-2016 19:52:37 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [26-Nov-2016 19:52:37 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
 [26-Nov-2016 19:52:37 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
-[27-Nov-2016 14:30:31 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 14:30:31 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 14:30:31 Etc/GMT] PHP Notice:  Undefined variable: t_no in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 316
 [27-Nov-2016 14:30:31 Etc/GMT] PHP Notice:  Undefined variable: t_no in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 316
 [27-Nov-2016 14:30:31 Etc/GMT] PHP Notice:  Undefined variable: t_no in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 358
@@ -20559,10 +20559,10 @@
 [27-Nov-2016 14:30:31 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [27-Nov-2016 14:30:31 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
 [27-Nov-2016 14:30:31 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
-[27-Nov-2016 14:30:34 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 14:30:34 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 14:30:34 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
 [27-Nov-2016 14:30:34 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
-[27-Nov-2016 14:30:37 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 14:30:37 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 14:30:37 Etc/GMT] PHP Notice:  Undefined variable: t_no in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 316
 [27-Nov-2016 14:30:37 Etc/GMT] PHP Notice:  Undefined variable: t_no in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 316
 [27-Nov-2016 14:30:37 Etc/GMT] PHP Notice:  Undefined variable: t_no in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 358
@@ -20581,15 +20581,15 @@
 [27-Nov-2016 14:30:37 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [27-Nov-2016 14:30:37 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
 [27-Nov-2016 14:30:37 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
-[27-Nov-2016 14:30:38 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 14:30:38 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 14:30:38 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
 [27-Nov-2016 14:30:38 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
-[27-Nov-2016 20:02:34 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:02:34 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:02:34 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [27-Nov-2016 20:02:34 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [27-Nov-2016 20:02:34 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
 [27-Nov-2016 20:02:34 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
-[27-Nov-2016 20:04:06 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:06 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:06 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [27-Nov-2016 20:04:06 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:06 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
@@ -20597,11 +20597,11 @@
 [27-Nov-2016 20:04:06 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:06 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:06 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
-[27-Nov-2016 20:04:06 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:06 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:06 Etc/GMT] PHP Notice:  Undefined variable: ans in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 224
 [27-Nov-2016 20:04:06 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
 [27-Nov-2016 20:04:06 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
-[27-Nov-2016 20:04:09 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:09 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:09 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [27-Nov-2016 20:04:09 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:09 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
@@ -20609,11 +20609,11 @@
 [27-Nov-2016 20:04:09 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:09 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:09 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
-[27-Nov-2016 20:04:09 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:09 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:09 Etc/GMT] PHP Notice:  Undefined variable: ans in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 224
 [27-Nov-2016 20:04:09 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
 [27-Nov-2016 20:04:09 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
-[27-Nov-2016 20:04:10 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:10 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
@@ -20621,11 +20621,11 @@
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
-[27-Nov-2016 20:04:10 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:10 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Notice:  Undefined variable: ans in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 224
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
-[27-Nov-2016 20:04:10 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:10 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
@@ -20633,11 +20633,11 @@
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
-[27-Nov-2016 20:04:10 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:10 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Notice:  Undefined variable: ans in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 224
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
 [27-Nov-2016 20:04:10 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
-[27-Nov-2016 20:04:11 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:11 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
@@ -20645,11 +20645,11 @@
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
-[27-Nov-2016 20:04:11 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:11 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Notice:  Undefined variable: ans in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 224
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
-[27-Nov-2016 20:04:11 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:11 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
@@ -20657,11 +20657,11 @@
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
-[27-Nov-2016 20:04:11 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:11 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Notice:  Undefined variable: ans in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 224
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
-[27-Nov-2016 20:04:11 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:11 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
@@ -20669,11 +20669,11 @@
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
-[27-Nov-2016 20:04:11 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:11 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Notice:  Undefined variable: ans in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 224
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
 [27-Nov-2016 20:04:11 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
-[27-Nov-2016 20:04:17 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:17 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:17 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [27-Nov-2016 20:04:17 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:17 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
@@ -20681,19 +20681,19 @@
 [27-Nov-2016 20:04:17 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:17 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
 [27-Nov-2016 20:04:17 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 524
-[27-Nov-2016 20:04:18 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[27-Nov-2016 20:04:18 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [27-Nov-2016 20:04:18 Etc/GMT] PHP Notice:  Undefined variable: ans in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 224
 [27-Nov-2016 20:04:18 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
 [27-Nov-2016 20:04:18 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
-[28-Nov-2016 04:40:22 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[28-Nov-2016 04:40:22 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [28-Nov-2016 04:40:23 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [28-Nov-2016 04:40:23 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [28-Nov-2016 04:40:23 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
 [28-Nov-2016 04:40:23 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522
-[28-Nov-2016 04:40:25 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[28-Nov-2016 04:40:25 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [28-Nov-2016 04:40:25 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
 [28-Nov-2016 04:40:25 Etc/GMT] PHP Warning:  Invalid argument supplied for foreach() in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_sp_inf.php on line 264
-[28-Nov-2016 05:26:36 Etc/GMT] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
+[28-Nov-2016 05:26:36 Etc/GMT] PHP Deprecated:  mysqli_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/connection.php on line 2
 [28-Nov-2016 05:26:36 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [28-Nov-2016 05:26:36 Etc/GMT] PHP Notice:  Undefined variable: inf_f in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 506
 [28-Nov-2016 05:26:36 Etc/GMT] PHP Notice:  Undefined variable: f_ev1 in /home/ultisg2t/public_html/www.tamilpulavar.org/eng_to_tam/process_inf.php on line 522

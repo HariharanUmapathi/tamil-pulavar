@@ -123,8 +123,8 @@ $('.tt').tooltip({placement:"bottom"});
 		 //echo $f_char; 
 		// echo"SELECT `hdwrd` FROM `hwrd` WHERE `hdwrd` LIKE '_$f_char%'"; 	
 		// exit;
-		 $qry  =	mysql_query("SELECT `hdwrd` FROM `hwrd` WHERE `hdwrd` LIKE '_$f_char%' LIMIT 4")or die(mysql_error());
-		 while($fet1 = 	mysql_fetch_array($qry))
+		 $qry  =	mysqli_query($connection,"SELECT `hdwrd` FROM `hwrd` WHERE `hdwrd` LIKE '_$f_char%' LIMIT 4")or die(mysqli_error($connection));
+		 while($fet1 = 	mysqli_fetch_array($qry))
 		 {
 			  $chk = T2R($fet1['hdwrd']);
 			  if($f_char1 == substr($chk,2,2))
@@ -183,8 +183,8 @@ $('.tt').tooltip({placement:"bottom"});
 		 $f_char1     = substr($val_en,0,2);
 		 $f_char 	 = R2T($f_char1);
 		 //echo $f_char;  	
-		 $qry  =	mysql_query("SELECT `hdwrd` FROM `hwrd` WHERE `hdwrd` LIKE '$f_char%' LIMIT 4")or die(mysql_error());
-		 while($fet1 = 	mysql_fetch_array($qry))
+		 $qry  =	mysqli_query($connection,"SELECT `hdwrd` FROM `hwrd` WHERE `hdwrd` LIKE '$f_char%' LIMIT 4")or die(mysqli_error($connection));
+		 while($fet1 = 	mysqli_fetch_array($qry))
 		 {
 			 $chk = T2R($fet1['hdwrd']);
 			 //echo $f_char1." ".$chk;

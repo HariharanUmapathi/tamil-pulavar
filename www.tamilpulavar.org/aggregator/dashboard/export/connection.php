@@ -6,7 +6,7 @@
 	$database = "ultisg2t_sentence";
 
 
-	 $conn = mysql_connect("$hostname","$username","$password") or die(mysql_error());
-	mysql_select_db("$database", $conn) or die(mysql_error());
+	 $conn = mysqli_connect("$hostname","$username","$password") or die(mysqli_error($connection));
+	mysqli_select_db("$database", $conn) or die(mysqli_error($connection));
 
 ?>

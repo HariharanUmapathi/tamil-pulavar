@@ -5,10 +5,10 @@ $sent			    =	$_POST['cntnt'];
 $arr_sent		    =	explode(" ",$sent);
 $verb			    =	end($arr_sent);
 $sub			     = 	$arr_sent[0];
-$sub			     =	mysql_real_escape_string($sub);
+$sub			     =	mysqli_real_escape_string($sub);
 
-$sub_en		      =	mysql_query("SELECT * FROM `word` WHERE `tword` = '$sub' ")or die(mysql_error());
-$s_e		         =	mysql_fetch_array($sub_en);
+$sub_en		      =	mysqli_query($connection,"SELECT * FROM `word` WHERE `tword` = '$sub' ")or die(mysqli_error($connection));
+$s_e		         =	mysqli_fetch_array($sub_en);
 $verb_wrd			=	T2R($verb);
 $special_word		=	array(
 								"see"  	 =>	"காண்",

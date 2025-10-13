@@ -31,10 +31,10 @@ else
 $search1	=	substr($search,0,-1);
 $search1	=	str_replace("_","\_",$search1);
 $search1	=	preg_replace("/[^A-Za-z\_]/","",$search1);
-$sql	   =	mysql_query("SELECT DISTINCT `hdwrd` FROM `hwrd` WHERE `trans` COLLATE latin1_bin LIKE '$search1%'")or die(mysql_error());
-if(mysql_num_rows($sql))
+$sql	   =	mysqli_query($connection,"SELECT DISTINCT `hdwrd` FROM `hwrd` WHERE `trans` COLLATE latin1_bin LIKE '$search1%'")or die(mysqli_error($connection));
+if(mysqli_num_rows($sql))
 {
-while($fet	=	mysql_fetch_array($sql))
+while($fet	=	mysqli_fetch_array($sql))
 {
 	$word		=	$fet['hdwrd'];
 	?> 
@@ -72,11 +72,11 @@ $search2	=	$search;
 else
 $search2	=	substr($search,0,-1);
 $search2	=	preg_replace("/[^A-Za-z\_]/","",$search2);
-$sql	=	mysql_query("SELECT DISTINCT `hdwrd` FROM `hwrd` WHERE `trans` COLLATE latin1_bin LIKE '%$search2%' 
-						  AND `trans` COLLATE latin1_bin NOT LIKE '%$search' AND `trans` COLLATE latin1_bin NOT LIKE '$search2%'")or die(mysql_error());
-if(mysql_num_rows($sql))
+$sql	=	mysqli_query($connection,"SELECT DISTINCT `hdwrd` FROM `hwrd` WHERE `trans` COLLATE latin1_bin LIKE '%$search2%' 
+						  AND `trans` COLLATE latin1_bin NOT LIKE '%$search' AND `trans` COLLATE latin1_bin NOT LIKE '$search2%'")or die(mysqli_error($connection));
+if(mysqli_num_rows($sql))
 {						  
-while($fet	=	mysql_fetch_array($sql))
+while($fet	=	mysqli_fetch_array($sql))
 {
 	$word		=	$fet['hdwrd'];
 	?> 
@@ -110,10 +110,10 @@ if($search[0] == "_")
 $search	 =	substr($search,1);
 //echo $search;
 //exit;
-$sql	=	mysql_query("SELECT DISTINCT `hdwrd` FROM `hwrd` WHERE `trans` COLLATE latin1_bin LIKE '%$search'")or die(mysql_error());
-if(mysql_num_rows($sql))
+$sql	=	mysqli_query($connection,"SELECT DISTINCT `hdwrd` FROM `hwrd` WHERE `trans` COLLATE latin1_bin LIKE '%$search'")or die(mysqli_error($connection));
+if(mysqli_num_rows($sql))
 {
-while($fet	=	mysql_fetch_array($sql))
+while($fet	=	mysqli_fetch_array($sql))
 {
 	$word		=	$fet['hdwrd'];
 	?> 

@@ -3,9 +3,9 @@
     $key=trim($_POST['key']);
     $array = array();
 	
-    $query=mysql_query("select `hdword` from `ewords` WHERE `hdword` LIKE '{$key}%' LIMIT 6");
+    $query=mysqli_query($connection,"select `hdword` from `ewords` WHERE `hdword` LIKE '{$key}%' LIMIT 6");
 	//echo "select `tword` from `kazhakam` WHERE `tword` LIKE '%{$key}%'";
-    while($row=mysql_fetch_assoc($query))
+    while($row=mysqli_fetch_assoc($query))
     {
       $val = trim($row['hdword']);
 	  ?>

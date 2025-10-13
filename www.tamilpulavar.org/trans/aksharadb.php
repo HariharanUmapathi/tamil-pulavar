@@ -8,13 +8,13 @@ echo <<<CWS
 <body>
 CWS;
 
-$con = mysql_connect("localhost","virtualv_aksharu","o&B4p;8u9(i)");
+$con = mysqli_connect("localhost","virtualv_aksharu","o&B4p;8u9(i)");
 
-mysql_select_db("virtualv_akshara", $con);
+mysqli_select_db("virtualv_akshara", $con);
 
-mysql_set_charset('utf8',$con); 
+mysqli_set_charset('utf8',$con); 
 
-$result = mysql_query("SELECT * FROM aksharamukha");
+$result = mysqli_query($connection,"SELECT * FROM aksharamukha");
 
 echo "<table border='1'>
 <tr>
@@ -24,7 +24,7 @@ echo "<table border='1'>
 <th>Target Script</th>
 </tr>";
 
-while($row = mysql_fetch_array($result))
+while($row = mysqli_fetch_array($result))
   {
   echo "<tr>";
   echo "<td>" . $row['srctxt'] . "</td>";
@@ -35,5 +35,5 @@ while($row = mysql_fetch_array($result))
   }
 echo "</table>";
 
-mysql_close($con);
+mysqli_close($con);
 ?>

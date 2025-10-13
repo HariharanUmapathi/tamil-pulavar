@@ -105,8 +105,8 @@ function myfn()
 <div class="col-sm-3">
     <select class="form-control" name="keyword">
     <?php include("../connection.php"); 
-	$results = mysql_query("SELECT * FROM `keywords` ORDER BY `keywords` ASC");
-	while($row = mysql_fetch_assoc($results))
+	$results = mysqli_query($connection,"SELECT * FROM `keywords` ORDER BY `keywords` ASC");
+	while($row = mysqli_fetch_assoc($results))
 	{
 		$key = $row['keywords'];
 		?>

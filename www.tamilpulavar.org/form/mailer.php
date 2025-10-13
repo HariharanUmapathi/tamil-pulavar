@@ -38,8 +38,8 @@ $subject = "Account Verfication";
 
 
 
-$result_email = mysql_query("SELECT * FROM `members` WHERE `email`='$from'");
-$count_email = mysql_num_rows($result_email);
+$result_email = mysqli_query($connection,"SELECT * FROM `members` WHERE `email`='$from'");
+$count_email = mysqli_num_rows($result_email);
 
 if((md5($verif_box).'a4xn' == $_COOKIE['tntcon'])&&($cnfpwd == $pwd) && $count_email == 0)
 {
@@ -49,9 +49,9 @@ if((md5($verif_box).'a4xn' == $_COOKIE['tntcon'])&&($cnfpwd == $pwd) && $count_e
 	//mail($from, 'Online Form: '.$subject, $message, "From:admin@tamilpulavar.org");
 	// delete the cookie so it cannot sent again by refreshing this page
 	setcookie('tntcon','');
-	mysql_query("INSERT INTO `members`(`sno`, `name`,`email`, `password`, `activation`) VALUES ('NULL','$name','$from','$md5_pwd','1') ");
-	$result_wrd 	 = mysql_query("SELECT `sno` FROM `members` WHERE `email`='$from' AND `password`='$md5_pwd' AND `activation`='1'");
-	$row_wrd 		= mysql_fetch_array($result_wrd);
+	mysqli_query($connection,"INSERT INTO `members`(`sno`, `name`,`email`, `password`, `activation`) VALUES ('NULL','$name','$from','$md5_pwd','1') ");
+	$result_wrd 	 = mysqli_query($connection,"SELECT `sno` FROM `members` WHERE `email`='$from' AND `password`='$md5_pwd' AND `activation`='1'");
+	$row_wrd 		= mysqli_fetch_array($result_wrd);
 	
 	$_SESSION['id'] = $row_wrd['sno'];
 	header('Location:dashboard.php');

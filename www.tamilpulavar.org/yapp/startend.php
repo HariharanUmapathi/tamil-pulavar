@@ -30,10 +30,10 @@ $search1	=	substr($search,0,-1);
 $search1	=	str_replace("_","\_",$search1);
 //echo "SELECT * FROM `hwrd` WHERE `trans` COLLATE latin1_bin LIKE '$search1%'";
 //exit;
-$sql	   =	mysql_query("SELECT * FROM `hwrd` WHERE `trans` COLLATE latin1_bin LIKE '$search1%'")or die(mysql_error());
-if(mysql_num_rows($sql))
+$sql	   =	mysqli_query($connection,"SELECT * FROM `hwrd` WHERE `trans` COLLATE latin1_bin LIKE '$search1%'")or die(mysqli_error($connection));
+if(mysqli_num_rows($sql))
 {
-while($fet	=	mysql_fetch_array($sql))
+while($fet	=	mysqli_fetch_array($sql))
 {
 	echo $fet['hdwrd'];
 	echo "<br>";
@@ -68,11 +68,11 @@ $search2	=	$search;
 else
 $search2	=	substr($search,0,-1);
 
-$sql	=	mysql_query("SELECT * FROM `hwrd` WHERE `trans` COLLATE latin1_bin LIKE '%$search2%' 
-						  AND `trans` COLLATE latin1_bin NOT LIKE '%$search' AND `trans` COLLATE latin1_bin NOT LIKE '$search2%'")or die(mysql_error());
-if(mysql_num_rows($sql))
+$sql	=	mysqli_query($connection,"SELECT * FROM `hwrd` WHERE `trans` COLLATE latin1_bin LIKE '%$search2%' 
+						  AND `trans` COLLATE latin1_bin NOT LIKE '%$search' AND `trans` COLLATE latin1_bin NOT LIKE '$search2%'")or die(mysqli_error($connection));
+if(mysqli_num_rows($sql))
 {						  
-while($fet	=	mysql_fetch_array($sql))
+while($fet	=	mysqli_fetch_array($sql))
 {
 	echo $fet['hdwrd'];
 	echo "<br>";
@@ -103,10 +103,10 @@ if($search[0] == "_")
 $search	 =	substr($search,1);
 //echo $search;
 //exit;
-$sql	=	mysql_query("SELECT * FROM `hwrd` WHERE `trans` COLLATE latin1_bin LIKE '%$search'")or die(mysql_error());
-if(mysql_num_rows($sql))
+$sql	=	mysqli_query($connection,"SELECT * FROM `hwrd` WHERE `trans` COLLATE latin1_bin LIKE '%$search'")or die(mysqli_error($connection));
+if(mysqli_num_rows($sql))
 {
-while($fet	=	mysql_fetch_array($sql))
+while($fet	=	mysqli_fetch_array($sql))
 {
 	echo $fet['hdwrd'];
 	echo "<br>";
