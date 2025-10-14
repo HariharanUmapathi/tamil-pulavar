@@ -27,14 +27,14 @@
                 <tr class="text-danger h4"><td>NAME</td><td>TOTAL WORDS</td><td>RANK</td></tr>
                     <?php
                     include("connection.php");
-                    mysql_query("SET @rank := 0") or die(mysql_error());
-                    $qry		  =	mysql_query("SELECT @rank := @rank+1 AS `rank`, `user_id`, `total_words` FROM `rank_list` ORDER BY `total_words` DESC");
-                    while($qry_fetch   =	mysql_fetch_array($qry))
+                    mysqli_query($connection,"SET @rank := 0") or die(mysqli_error($connection));
+                    $qry		  =	mysqli_query($connection,"SELECT @rank := @rank+1 AS `rank`, `user_id`, `total_words` FROM `rank_list` ORDER BY `total_words` DESC");
+                    while($qry_fetch   =	mysqli_fetch_array($qry))
                     {
                         $rank		  =	$qry_fetch['rank'];
                         $u_id    	  =	$qry_fetch['user_id'];
-                        $qry1	 	  =	mysql_query("SELECT `name` FROM `members` WHERE `sno` = '$u_id'");
-                        $qry1_fetch	=	mysql_fetch_array($qry1);
+                        $qry1	 	  =	mysqli_query($connection,"SELECT `name` FROM `members` WHERE `sno` = '$u_id'");
+                        $qry1_fetch	=	mysqli_fetch_array($qry1);
                         $name 		  =	$qry1_fetch['name'];
                         $total  		 =	$qry_fetch['total_words'];
                         ?>

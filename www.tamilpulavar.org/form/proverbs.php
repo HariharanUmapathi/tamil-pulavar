@@ -11,11 +11,11 @@ else
 	$u_id   		= 	$_SESSION['id'];	
 	$pala_wrd 	=	$_POST['pala_wrd'];
 	$syn 		 = 	'';
-	$qry    	 =	mysql_query("SELECT `proverb` FROM `proverbs` WHERE `proverb` = '$pala_wrd'")or die(mysql_error());
-	if(mysql_num_rows($qry) == 0)
+	$qry    	 =	mysqli_query($connection,"SELECT `proverb` FROM `proverbs` WHERE `proverb` = '$pala_wrd'")or die(mysqli_error($connection));
+	if(mysqli_num_rows($qry) == 0)
 	{
 		$literate = T2R($pala_wrd);
-		mysql_query("INSERT INTO `proverbs`(`sno`, `proverb`,`user_id`,`literate`) VALUES ('NULL','$pala_wrd','$u_id','$literate')");
+		mysqli_query($connection,"INSERT INTO `proverbs`(`sno`, `proverb`,`user_id`,`literate`) VALUES ('NULL','$pala_wrd','$u_id','$literate')");
 		echo "Successfully Inserted";
 	}
 	else

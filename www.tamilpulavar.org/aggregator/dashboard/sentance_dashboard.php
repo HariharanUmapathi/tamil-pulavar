@@ -1,5 +1,5 @@
 ﻿<?php 
-error_reporting(0);
+;
 ini_set('max_execution_time',0);
 @session_start();
 if($_SESSION['user_id'] == "")
@@ -13,11 +13,11 @@ if($_SESSION['user_id'] == "")
 $user_id = $_SESSION['user_id'];
 $check = $user_id."finished";
 include("../connection.php");
-$results = mysql_query("SELECT `role` FROM `members` WHERE `user_id`='$user_id'");
-$res_row = mysql_fetch_array($results);
+$results = mysqli_query($connection,"SELECT `role` FROM `members` WHERE `user_id`='$user_id'");
+$res_row = mysqli_fetch_array($results);
 $role = $res_row['role'];
-$results1 = mysql_query("SELECT `role` FROM `role` WHERE `value`='$role'");
-$res_row1 = mysql_fetch_array($results1);
+$results1 = mysqli_query($connection,"SELECT `role` FROM `role` WHERE `value`='$role'");
+$res_row1 = mysqli_fetch_array($results1);
 $role_name = $res_row1['role'];
 ?>
 <!DOCTYPE html>
@@ -129,8 +129,8 @@ $role_name = $res_row1['role'];
 					date_default_timezone_set("Asia/Kolkata");
 					$date = date('d-m-Y H:i:s');
 					//echo $user_id;
-					$query_categoryid = mysql_query("SELECT * FROM `category`"); 
-					while($fetch_categoryid = mysql_fetch_array($query_categoryid))
+					$query_categoryid = mysqli_query($connection,"SELECT * FROM `category`"); 
+					while($fetch_categoryid = mysqli_fetch_array($query_categoryid))
 					{
 						$categoryid[] = $fetch_categoryid['id'];
 						$categoryname[] = $fetch_categoryid['category'];
@@ -138,41 +138,41 @@ $role_name = $res_row1['role'];
 					$count_category = count($categoryid);
 					for($b = 0; $b < $count_category;$b++)
 					{
-					$cat_result = mysql_query("SELECT * FROM `sentance_admin_checked` WHERE `category_names` = '$categoryid[$b]'"); 
-					$category_count[] = mysql_num_rows($cat_result);
+					$cat_result = mysqli_query($connection,"SELECT * FROM `sentance_admin_checked` WHERE `category_names` = '$categoryid[$b]'"); 
+					$category_count[] = mysqli_num_rows($cat_result);
 					}
 					
 					 					
 					//echo $link_id;
-					/*$query_sublinkcount = mysql_query("SELECT `sublink` FROM `sublinks` WHERE `mainlink_id` = $link_id AND `checked` = 1  ");
-					$count_sublinks = mysql_num_rows($query_sublinkcount);
+					/*$query_sublinkcount = mysqli_query($connection,"SELECT `sublink` FROM `sublinks` WHERE `mainlink_id` = $link_id AND `checked` = 1  ");
+					$count_sublinks = mysqli_num_rows($query_sublinkcount);
 					if($count_sublinks == 0)
 					{
 						$count_sublinks = 0;
 					}
-					$query_sentence = mysql_query("SELECT `sentances` FROM `sentance`");
-					$num_sentence = mysql_num_rows($query_sentence);
+					$query_sentence = mysqli_query($connection,"SELECT `sentances` FROM `sentance`");
+					$num_sentence = mysqli_num_rows($query_sentence);
 					if($num_sentence == 0)
 					{
 						$num_sentence = 0;
 					}
-					$results11 = mysql_query("SELECT * FROM `members` WHERE `role` != '1'");
-					$count_mem = mysql_num_rows($results11);
+					$results11 = mysqli_query($connection,"SELECT * FROM `members` WHERE `role` != '1'");
+					$count_mem = mysqli_num_rows($results11);
 					
 					
 					
-					$results_finished = mysql_query("SELECT * FROM `sentance` WHERE `$check` = '1'");
-					$count_finished = mysql_num_rows($results_finished);
+					$results_finished = mysqli_query($connection,"SELECT * FROM `sentance` WHERE `$check` = '1'");
+					$count_finished = mysqli_num_rows($results_finished);
 					
 					
-					$result_user = mysql_query("SELECT * FROM `members` WHERE `sno` != '1'");
-					 while($row_user = mysql_fetch_assoc($result_user))
+					$result_user = mysqli_query($connection,"SELECT * FROM `members` WHERE `sno` != '1'");
+					 while($row_user = mysqli_fetch_assoc($result_user))
 					 {
 					 $checked[] = $row_user['user_id']."finished";	 
 					
 					 }
-					$results_finished_user = mysql_query("SELECT * FROM `sentance`WHERE " . implode( ' = 1 OR ', $checked ) ."");
-					$count_finished_user = mysql_num_rows($results_finished_user);*/
+					$results_finished_user = mysqli_query($connection,"SELECT * FROM `sentance`WHERE " . implode( ' = 1 OR ', $checked ) ."");
+					$count_finished_user = mysqli_num_rows($results_finished_user);*/
 					//echo "Links Processed:".$count_sublinks."<br>";
 					//echo "Sentence Completed:".$num_sentence."<br>";
 					

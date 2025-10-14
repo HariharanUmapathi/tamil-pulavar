@@ -14,13 +14,13 @@ $(document).ready(function(){
 <body>
 <?php
 include("connection.php");
-/*mysql_connect("localhost","root","")or die(mysql_error());
-mysql_select_db("word")or die(mysql_error());
-mysql_query("SET NAMES 'utf8'");*/
+/*mysqli_connect("localhost","root","")or die(mysqli_error($connection));
+mysqli_select_db("word")or die(mysqli_error($connection));
+mysqli_query($connection,("SET NAMES 'utf8'");*/
 //exit;
 $value		  =	$_POST['ilak'];
-$result_c_name1 = mysql_query("SELECT  `topic` FROM `ilakiyam_search_oder` ORDER BY `order`");
-while($row1 = mysql_fetch_array($result_c_name1))
+$result_c_name1 = mysqli_query($connection,"SELECT  `topic` FROM `ilakiyam_search_oder` ORDER BY `order`");
+while($row1 = mysqli_fetch_array($result_c_name1))
      {
           $name_ter1[]  =	$row1['topic'];
 		  
@@ -31,12 +31,12 @@ while($row1 = mysql_fetch_array($result_c_name1))
 	 //print_r($name_ter1);
 	 for($q=0;$q<count($name_ter1);$q++)
 	 {
-		 $ta_names	 =	mysql_real_escape_string($name_ter1[$q]);
-	  	 $qry_cw       =	mysql_query("SELECT `meaning` FROM `ilakiyam` WHERE `hdwrd` = '$value' AND `topic` = '$ta_names'");
-		$count_wrds   =	mysql_num_rows($qry_cw);
+		 $ta_names	 =	mysqli_real_escape_string($connection,$name_ter1[$q]);
+	  	 $qry_cw       =	mysqli_query($connection,"SELECT `meaning` FROM `ilakiyam` WHERE `hdwrd` = '$value' AND `topic` = '$ta_names'");
+		$count_wrds   =	mysqli_num_rows($qry_cw);
 			if($count_wrds >= 1)
 			{
-				while($fet_cw  =	mysql_fetch_assoc($qry_cw))
+				while($fet_cw  =	mysqli_fetch_assoc($qry_cw))
 				{
 					$word_mean[$q][]  = $fet_cw['meaning'];
 					//echo $fet_cw['meaning']."<br>";

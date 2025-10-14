@@ -18,9 +18,9 @@
 include("../connection.php");
 $name = $_POST['email'];
 $password = md5($_POST['pwd']);
-$result = mysql_query("SELECT `sno`,`name`,`email` FROM `members` WHERE `email`='$name' AND `password`='$password' AND `activation`='1'");
-$count = mysql_num_rows($result);
-$row = mysql_fetch_array($result);
+$result = mysqli_query($connection,"SELECT `sno`,`name`,`email` FROM `members` WHERE `email`='$name' AND `password`='$password' AND `activation`='1'");
+$count = mysqli_num_rows($result);
+$row = mysqli_fetch_array($result);
 if($count > 0)
 {
 	if($row['email'] == "ultisoft15@gmail.com")

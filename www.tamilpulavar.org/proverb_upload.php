@@ -46,14 +46,14 @@ if(isset($_POST['submit']))
 		if($line != "")
 		{
 			$tran_line  = 	T2R($line);
-			$resOpro	=	mysql_query("SELECT * FROM `proverbs` WHERE `proverb` = '$line'")or die(mysql_error());
-			if(mysql_num_rows($resOpro))
+			$resOpro	=	mysqli_query($connection,"SELECT * FROM `proverbs` WHERE `proverb` = '$line'")or die(mysqli_error($connection));
+			if(mysqli_num_rows($resOpro))
 			{
 			}
 			else
 			{
-				mysql_query("INSERT INTO `proverbs`(`sno`, `proverb`, `user_id`, `admin_checked`, `literate`) VALUES
-				('NULL','$line','','1','$tran_line')")or die(mysql_error());
+				mysqli_query($connection,"INSERT INTO `proverbs`(`sno`, `proverb`, `user_id`, `admin_checked`, `literate`) VALUES
+				('NULL','$line','','1','$tran_line')")or die(mysqli_error($connection));
 			}
 		}
 	}

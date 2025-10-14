@@ -12,51 +12,51 @@ else
 	$mean   =	$_POST['mean'];
 	$anton  =	$_POST['anton'];
 	$syn 	= 	'';
-	$qry    =	mysql_query("SELECT `tword` FROM `antonyms` WHERE `tword` = '$wrd'")or die(mysql_error());
-	if(mysql_num_rows($qry) == 0)
+	$qry    =	mysqli_query($connection,"SELECT `tword` FROM `antonyms` WHERE `tword` = '$wrd'")or die(mysqli_error($connection));
+	if(mysqli_num_rows($qry) == 0)
 	{
-		$qry1    =	mysql_query("SELECT * FROM `synonym` WHERE `tword` = '$anton'")or die(mysql_error());
-		if(mysql_num_rows($qry1) != 0)
+		$qry1    =	mysqli_query($connection,"SELECT * FROM `synonym` WHERE `tword` = '$anton'")or die(mysqli_error($connection));
+		if(mysqli_num_rows($qry1) != 0)
 		{	
 			
-			while($syns = mysql_fetch_array($qry1))
+			while($syns = mysqli_fetch_array($qry1))
 			{
 				  $val    = $syns['meaning'];
-				  $syn   .= mysql_real_escape_string($val).";";
+				  $syn   .= mysqli_real_escape_string($val).";";
 			}
-			$con 	=  mysql_real_escape_string($syn);
-			mysql_query("INSERT INTO `antonyms` (`sno`,`tword`,`meaning`,`tword_meaning`,`user_id`) values 	('','$wrd','$anton','$mean','$u_id')") or die(mysql_error());
-			$num	=	mysql_query("SELECT COUNT(*) FROM `antonyms` WHERE `user_id` = '$u_id'") or die(mysql_error());
-			$ct	 =	mysql_fetch_array($num);
+			$con 	=  mysqli_real_escape_string($syn);
+			mysqli_query($connection,"INSERT INTO `antonyms` (`sno`,`tword`,`meaning`,`tword_meaning`,`user_id`) values 	('','$wrd','$anton','$mean','$u_id')") or die(mysqli_error($connection));
+			$num	=	mysqli_query($connection,"SELECT COUNT(*) FROM `antonyms` WHERE `user_id` = '$u_id'") or die(mysqli_error($connection));
+			$ct	 =	mysqli_fetch_array($num);
 			$t_words= 	$ct['COUNT(*)'];
-			$no	=	mysql_query("SELECT * FROM `rank_list` WHERE `user_id` = $u_id");
-			if(mysql_num_rows($no) > 0)
+			$no	=	mysqli_query($connection,"SELECT * FROM `rank_list` WHERE `user_id` = $u_id");
+			if(mysqli_num_rows($no) > 0)
 			{
 				
-				mysql_query("UPDATE `rank_list` SET `total_words` = '$t_words' WHERE `user_id` = '$u_id'") or die(mysql_error());
+				mysqli_query($connection,"UPDATE `rank_list` SET `total_words` = '$t_words' WHERE `user_id` = '$u_id'") or die(mysqli_error($connection));
 			} 
 			else
 			{
-				mysql_query("INSERT INTO `rank_list` (`sno`,`user_id`,`total_words`) values('','$u_id','$t_words')")or die(mysql_error());
+				mysqli_query($connection,"INSERT INTO `rank_list` (`sno`,`user_id`,`total_words`) values('','$u_id','$t_words')")or die(mysqli_error($connection));
 			}
 			echo "Successfully Inserted";
 			unset($syn);
 		}
 		else
 		{
-			mysql_query("INSERT INTO `antonyms` (`sno`,`tword`,`meaning`,`tword_meaning`,`user_id`) values 	('','$wrd','$anton','$mean','$u_id')") or die(mysql_error());
-			$num	=	mysql_query("SELECT COUNT(*) FROM `antonyms` WHERE `user_id` = '$u_id'") or die(mysql_error());
-			$ct	 =	mysql_fetch_array($num);
+			mysqli_query($connection,"INSERT INTO `antonyms` (`sno`,`tword`,`meaning`,`tword_meaning`,`user_id`) values 	('','$wrd','$anton','$mean','$u_id')") or die(mysqli_error($connection));
+			$num	=	mysqli_query($connection,"SELECT COUNT(*) FROM `antonyms` WHERE `user_id` = '$u_id'") or die(mysqli_error($connection));
+			$ct	 =	mysqli_fetch_array($num);
 			$t_words= 	$ct['COUNT(*)'];
-			$no	=	mysql_query("SELECT * FROM `rank_list` WHERE `user_id` = $u_id");
-			if(mysql_num_rows($no) > 0)
+			$no	=	mysqli_query($connection,"SELECT * FROM `rank_list` WHERE `user_id` = $u_id");
+			if(mysqli_num_rows($no) > 0)
 			{
 				
-				mysql_query("UPDATE `rank_list` SET `total_words` = '$t_words' WHERE `user_id` = '$u_id'") or die(mysql_error());
+				mysqli_query($connection,"UPDATE `rank_list` SET `total_words` = '$t_words' WHERE `user_id` = '$u_id'") or die(mysqli_error($connection));
 			}
 			else
 			{
-				mysql_query("INSERT INTO `rank_list` (`sno`,`user_id`,`total_words`) values('','$u_id','$t_words')")or die(mysql_error());
+				mysqli_query($connection,"INSERT INTO `rank_list` (`sno`,`user_id`,`total_words`) values('','$u_id','$t_words')")or die(mysqli_error($connection));
 			}
 			echo "Successfully Inserted";
 		}

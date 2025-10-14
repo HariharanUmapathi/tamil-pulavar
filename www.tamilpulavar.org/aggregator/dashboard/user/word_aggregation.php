@@ -26,21 +26,21 @@ function word($string)
 		$s=mb_substr($v,0,$len-2);
 		
 		if($s!=" ")
-		mysql_query("INSERT INTO `words` (`sno`,`words`,`link_id`) VALUES ('NULL','$s','NULL')");
+		mysqli_query($connection,"INSERT INTO `words` (`sno`,`words`,`link_id`) VALUES ('NULL','$s','NULL')");
 	  	
 		}
 		else
 		{
 		//echo $v."<br>";
 		if($s!=" ")
-		mysql_query("INSERT INTO `words` (`sno`,`words`,`link_id`) VALUES ('NULL','$v','NULL')");
+		mysqli_query($connection,"INSERT INTO `words` (`sno`,`words`,`link_id`) VALUES ('NULL','$v','NULL')");
 	  	
 		}
 		}
 		else
 		{
 		if($s!="")
-		mysql_query("INSERT INTO `words` (`sno`,`words`,`link_id`) VALUES ('NULL','$v','NULL')");
+		mysqli_query($connection,"INSERT INTO `words` (`sno`,`words`,`link_id`) VALUES ('NULL','$v','NULL')");
 	  
 		}
 		}

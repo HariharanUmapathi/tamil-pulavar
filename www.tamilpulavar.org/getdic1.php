@@ -1,10 +1,8 @@
 <?php
-ini_set('max_execution_time', 0);
-mysql_connect("localhost","root","");
-mysql_select_db("word");
-$qry	=	mysql_query("SELECT `eword` FROM `palsdict` WHERE  `eword` LIKE 'a%' AND `meaning` = '' ")or die(mysql_error());
-mysql_query("SET NAMES 'utf8'");
-while($fet	=	mysql_fetch_array($qry))
+include_once("connection.php");
+$qry	=	mysqli_query($connection,"SELECT `eword` FROM `palsdict` WHERE  `eword` LIKE 'a%' AND `meaning` = '' ")or die(mysqli_error($connection));
+
+while($fet	=	mysqli_fetch_array($qry))
 {
 $ewords[]	=	$fet['eword'];
 }
@@ -29,9 +27,9 @@ foreach($ewords as $eword)
 	$txt  = str_replace("&nbsp;","",$txt);
 	$txt  = strip_tags($txt);
 	$txt  = trim($txt);	
-	$txt  = mysql_real_escape_string($txt);
+	$txt  = mysqli_real_escape_string($connection,$txt);
 	//$txt  = str_replace("\r","",$txt);
-	mysql_query("UPDATE `palsdict` SET `meaning` = '$txt' WHERE `eword` = '$eword'")or die(mysql_error());
+	mysqli_query($connection,"UPDATE `palsdict` SET `meaning` = '$txt' WHERE `eword` = '$eword'")or die(mysqli_error($connection));
 	//echo $txt; 
 	//echo "</br>";
 	/*if($i==10)

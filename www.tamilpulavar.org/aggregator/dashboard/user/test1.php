@@ -6,9 +6,9 @@
 <body>
 <?php 
 include("../../connection.php");
-$result = mysql_query("SELECT * FROM `sentance`");
+$result = mysqli_query($connection,"SELECT * FROM `sentance`");
 $j =0;
-while($row = mysql_fetch_assoc($result))
+while($row = mysqli_fetch_assoc($result))
 {
 	$sentence = $row['sentances'];
 	$sentence_len = strlen($sentence);

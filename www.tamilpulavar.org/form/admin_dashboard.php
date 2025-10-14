@@ -135,8 +135,8 @@ include("../connection.php");
                                 <h4 class="title">எதிர்ச்சொல்</h4><br>
                                 <table class="table table-responsive table-bordered"><tr><td>Word</td><td>Antonym</td><td>Meaning</td><td>Delete</td></tr>
                              <?php  
-                          		$result = mysql_query("SELECT * FROM `antonyms` WHERE `user_id`!='' AND `admin_checked` != '1'");
-								while($row    = mysql_fetch_array($result))
+                          		$result = mysqli_query($connection,"SELECT * FROM `antonyms` WHERE `user_id`!='' AND `admin_checked` != '1'");
+								while($row    = mysqli_fetch_array($result))
 								{ ?>
 									<tr id="<?php echo $row['sno']; ?>"><td><?php echo $row['tword']; ?></td><td><?php echo $row['meaning'].$row['meaning_1']; ?></td>
                                     <td><?php echo $row['tword_meaning']; ?></td><td> 
@@ -168,8 +168,8 @@ include("../connection.php");
                                 <h4 class="title">பழமொழி</h4><br>
                                 <table class="table table-responsive table-bordered"><tr><td>Proverb</td><td>Delete</td></tr>
                              <?php  
-                          		$result = mysql_query("SELECT * FROM `proverbs` WHERE `user_id`!='' AND `admin_checked` != '1'");
-								while($row    = mysql_fetch_array($result))
+                          		$result = mysqli_query($connection,"SELECT * FROM `proverbs` WHERE `user_id`!='' AND `admin_checked` != '1'");
+								while($row    = mysqli_fetch_array($result))
 								{ ?>
 									<tr id="prov_<?php echo $row['sno']; ?>"><td><?php echo $row['proverb']; ?></td><td> 
                                     <button type="button" class="btn btn-danger btn-xs" data-toggle="tooltip"

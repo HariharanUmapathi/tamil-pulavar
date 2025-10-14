@@ -46,8 +46,8 @@
 <body>
 <?php
 include("connection.php");
-$result_fetch = mysql_query("SELECT * FROM `gword` WHERE `finished`='0' ORDER BY `eword` ASC LIMIT 20");
-while($row = mysql_fetch_array($result_fetch))
+$result_fetch = mysqli_query($connection,"SELECT * FROM `gword` WHERE `finished`='0' ORDER BY `eword` ASC LIMIT 20");
+while($row = mysqli_fetch_array($result_fetch))
 {
 	$sno[]   = $row['sno'];
 	$eword[] = $row['eword'];
@@ -187,7 +187,7 @@ if(isset($_POST['submit']))
 		
 		$evid;		
 		
-		mysql_query("UPDATE `gword` SET `vid`='$vid',`nid`='$nid',`evid`='$evid',`pid`='$pid',`oid`='$oid',`tense`='$tense',`finished`='1' WHERE `eword`='$eng_word' AND `sno`='$snos'");
+		mysqli_query($connection,"UPDATE `gword` SET `vid`='$vid',`nid`='$nid',`evid`='$evid',`pid`='$pid',`oid`='$oid',`tense`='$tense',`finished`='1' WHERE `eword`='$eng_word' AND `sno`='$snos'");
 		//exit;
 	}
 }

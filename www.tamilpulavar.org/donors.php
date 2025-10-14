@@ -28,8 +28,8 @@
                 <tr class="text-danger h4"><td>NAME</td><td>Amount</td><td></td></tr>
                     <?php
                     include("connection.php");
-                    $qry		  =	mysql_query("SELECT * FROM `donors` ORDER BY `sno` DESC");
-                    while($qry_fetch   =	mysql_fetch_array($qry))
+                    $qry		  =	mysqli_query($connection,"SELECT * FROM `donors` ORDER BY `sno` DESC");
+                    while($qry_fetch   =	mysqli_fetch_array($qry))
                     {
                         $name		  =	$qry_fetch['name'];
                         $amount    	=	$qry_fetch['amount'];

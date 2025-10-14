@@ -100,35 +100,35 @@ class pfcContainer_Oracle extends pfcContainerInterface
     // golemwashere: commented out this part for now, DB must be manually created
     /*
     $db_exists = false;
-    $db_list = mysql_list_dbs($db);
-    while (!$db_exists && $row = mysql_fetch_object($db_list))
-      $db_exists = ($c->container_cfg_mysql_database == $row->Database);
+    $db_list = mysqli_list_dbs($db);
+    while (!$db_exists && $row = mysqli_fetch_object($db_list))
+      $db_exists = ($c->container_cfg_mysqli_database == $row->Database);
     if (!$db_exists)
     {
-      $query = 'CREATE DATABASE '.$c->container_cfg_mysql_database;
-      $result = mysql_query($query, $db);
+      $query = 'CREATE DATABASE '.$c->container_cfg_mysqli_database;
+      $result = mysqli_query($query, $db);
       if ($result === FALSE)
       {
-        $errors[] = _pfc("Mysql container: create database error '%s'",mysql_error($db));
+        $errors[] = _pfc("Mysql container: create database error '%s'",mysqli_error($db));
         return $errors;
       }
-      mysql_select_db($c->container_cfg_mysql_database, $db);
+      mysqli_select_db($c->container_cfg_mysqli_database, $db);
     }
  
     // create the table if it doesn't exists
     $query = $this->_sql_create_table;
-    $query = str_replace('%engine%',              $c->container_cfg_mysql_engine,$query);
-    $query = str_replace('%table%',               $c->container_cfg_mysql_table,$query);
-    $query = str_replace('%fieldtype_server%',    $c->container_cfg_mysql_fieldtype_server,$query);
-    $query = str_replace('%fieldtype_group%',     $c->container_cfg_mysql_fieldtype_group,$query);
-    $query = str_replace('%fieldtype_subgroup%',  $c->container_cfg_mysql_fieldtype_subgroup,$query);
-    $query = str_replace('%fieldtype_leaf%',      $c->container_cfg_mysql_fieldtype_leaf,$query);
-    $query = str_replace('%fieldtype_leafvalue%', $c->container_cfg_mysql_fieldtype_leafvalue,$query);
-    $query = str_replace('%fieldtype_timestamp%', $c->container_cfg_mysql_fieldtype_timestamp,$query);    
-    $result = mysql_query($query, $db);
+    $query = str_replace('%engine%',              $c->container_cfg_mysqli_engine,$query);
+    $query = str_replace('%table%',               $c->container_cfg_mysqli_table,$query);
+    $query = str_replace('%fieldtype_server%',    $c->container_cfg_mysqli_fieldtype_server,$query);
+    $query = str_replace('%fieldtype_group%',     $c->container_cfg_mysqli_fieldtype_group,$query);
+    $query = str_replace('%fieldtype_subgroup%',  $c->container_cfg_mysqli_fieldtype_subgroup,$query);
+    $query = str_replace('%fieldtype_leaf%',      $c->container_cfg_mysqli_fieldtype_leaf,$query);
+    $query = str_replace('%fieldtype_leafvalue%', $c->container_cfg_mysqli_fieldtype_leafvalue,$query);
+    $query = str_replace('%fieldtype_timestamp%', $c->container_cfg_mysqli_fieldtype_timestamp,$query);    
+    $result = mysqli_query($query, $db);
     if ($result === FALSE)
     {
-      $errors[] = _pfc("Mysql container: create table error '%s'",mysql_error($db));
+      $errors[] = _pfc("Mysql container: create table error '%s'",mysqli_error($db));
       return $errors;
     }
     return $errors;
@@ -179,7 +179,7 @@ if (DB::isError($this->_db))
     # GOLEMQUERY #2
     $sql_insert="INSERT INTO ".$c->container_cfg_oracle_table." (server, groupg, subgroup, leaf, leafvalue, timestampg) VALUES('$server', '$group', '$subgroup', '$leaf', '$leafvalue', trunc((to_number(cast((systimestamp AT TIME ZONE 'GMT') as date)-cast(TO_TIMESTAMP_TZ ('01-01-1970 00:00:00 GMT', 'DD-MM-YYYY HH24:MI:SS TZR') as date))*86400)))";
     # mysql was:
-    #$sql_update="UPDATE ".$c->container_cfg_mysql_table." SET `leafvalue`='".addslashes($leafvalue)."', `timestamp`='".time()."' WHERE  `server`='$server' AND `group`='$group' AND `subgroup`='$subgroup' AND `leaf`='$leaf'";
+    #$sql_update="UPDATE ".$c->container_cfg_mysqli_table." SET `leafvalue`='".addslashes($leafvalue)."', `timestamp`='".time()."' WHERE  `server`='$server' AND `group`='$group' AND `subgroup`='$subgroup' AND `leaf`='$leaf'";
     # GOLEMQUERY #3 
     $sql_update="UPDATE ".$c->container_cfg_oracle_table." SET leafvalue='$leafvalue', timestampg= trunc((to_number(cast((systimestamp AT TIME ZONE 'GMT') as date)-cast(TO_TIMESTAMP_TZ ('01-01-1970 00:00:00 GMT', 'DD-MM-YYYY HH24:MI:SS TZR') as date))*86400)) WHERE  server='$server' AND groupg='$group' AND subgroup='$subgroup' AND leaf='$leaf'";
     
@@ -194,8 +194,8 @@ if (DB::isError($this->_db))
     $row = $res->fetchRow(DB_FETCHMODE_ASSOC);
     
 /* mysql was:
-    $res = mysql_query($sql_count, $db);
-    $row = mysql_fetch_array($res, MYSQL_ASSOC);
+    $res = mysqli_query($sql_count, $db);
+    $row = mysqli_fetch_array($res, MYSQL_ASSOC);
 */    
     
     if( $row['C'] == 0 )
@@ -265,14 +265,14 @@ if (DB::isError($this->_db))
           if (DB::isError($thisresult))   {  error_log("sql_select error $sql_select " . $thisresult->getMessage());         }
           	
           	
-      #if (mysql_num_rows($thisresult))
+      #if (mysqli_num_rows($thisresult))
       $this->_db->setOption('portability', DB_PORTABILITY_NUMROWS); 
       
       #error_log("numrows $numrows");
       
       if ($thisresult->numRows())
       {
-        #while ($regel = mysql_fetch_array($thisresult))
+        #while ($regel = mysqli_fetch_array($thisresult))
         while ($regel = $thisresult->fetchRow(DB_FETCHMODE_ASSOC))
         {
           $ret["timestamp"][] = $regel["TIMESTAMPG"];
@@ -310,16 +310,16 @@ if (DB::isError($this->_db))
     if (DB::isError($res))   {  error_log("sql_count error $sql_count " . $res->getMessage());         }
     if (DEBUGSQL) error_log("sql select $sql_count");
     $row = $res->fetchRow(DB_FETCHMODE_ASSOC);
-    #$res = mysql_query($sql_count, $db);
-    #$row = mysql_fetch_array($res, MYSQL_ASSOC);
+    #$res = mysqli_query($sql_count, $db);
+    #$row = mysqli_fetch_array($res, MYSQL_ASSOC);
     if( $row['C'] == 0 )
     {
       $leafvalue = 1;
-      #$sql_insert="REPLACE INTO ".$c->container_cfg_mysql_table." (`server`, `group`, `subgroup`, `leaf`, `leafvalue`, `timestamp`) VALUES('$server', '$group', '$subgroup', '$leaf', '".$leafvalue."', '".$time."')";
+      #$sql_insert="REPLACE INTO ".$c->container_cfg_mysqli_table." (`server`, `group`, `subgroup`, `leaf`, `leafvalue`, `timestamp`) VALUES('$server', '$group', '$subgroup', '$leaf', '".$leafvalue."', '".$time."')";
       # GOLEMQUERY # 6
       $sql_insert="INSERT INTO ".$c->container_cfg_oracle_table." (server, groupg, subgroup, leaf, leafvalue, timestampg) VALUES('$server', '$group', '$subgroup', '$leaf','$leafvalue', trunc((to_number(cast((systimestamp AT TIME ZONE 'GMT') as date)-cast(TO_TIMESTAMP_TZ ('01-01-1970 00:00:00 GMT', 'DD-MM-YYYY HH24:MI:SS TZR') as date))*86400)))";
       
-      #mysql_query($sql_insert, $db);
+      #mysqli_query($sql_insert, $db);
       $res=$this->_db->query($sql_insert);
       if (DB::isError($res)){ error_log("sql insert error $sql_insert " . $res->getMessage()); }
      if (DEBUGSQL) error_log("sql_insert $sql_insert");
@@ -327,7 +327,7 @@ if (DB::isError($this->_db))
     else
     {
       # mysql was:
-      #$sql_update="UPDATE ".$c->container_cfg_mysql_table." SET leafvalue= LAST_INSERT_ID( leafvalue + 1 ), `timestamp`='".$time."' WHERE  server='$server' AND groupg='$group' AND subgroup='$subgroup' AND leaf='$leaf'";
+      #$sql_update="UPDATE ".$c->container_cfg_mysqli_table." SET leafvalue= LAST_INSERT_ID( leafvalue + 1 ), `timestamp`='".$time."' WHERE  server='$server' AND groupg='$group' AND subgroup='$subgroup' AND leaf='$leaf'";
       # GOLEMQUERY #7
       # test using sequence nextval
       $sql_update="UPDATE ".$c->container_cfg_oracle_table." SET leafvalue= phpfreechat_leafvalue_seq.NEXTVAL, timestampg=trunc((to_number(cast((systimestamp AT TIME ZONE 'GMT') as date)-cast(TO_TIMESTAMP_TZ ('01-01-1970 00:00:00 GMT', 'DD-MM-YYYY HH24:MI:SS TZR') as date))*86400)) WHERE  server='$server' AND groupg='$group' AND subgroup='$subgroup' AND leaf='$leaf'";
@@ -342,7 +342,7 @@ if (DB::isError($this->_db))
       $res = $this->_db->query($sql_last);
       if (DB::isError($res))   {  error_log("error in SELECT lastleaf $sql_last" . $res->getMessage());         }      
        if (DEBUGSQL) error_log("select: SELECT phpfreechat_leafvalue_seq.currVAL as lastleaf FROM dual");
-      #$row = mysql_fetch_array($res, MYSQL_ASSOC);
+      #$row = mysqli_fetch_array($res, MYSQL_ASSOC);
       $row = $res->fetchRow(DB_FETCHMODE_ASSOC);
       $leafvalue = $row['LASTLEAF'];
     }
@@ -372,7 +372,7 @@ if (DB::isError($this->_db))
     if ($leaf != NULL)
       $sql_delete .= " AND leaf='$leaf'";
     
-    #mysql_query($sql_delete, $db);
+    #mysqli_query($sql_delete, $db);
     $res=$this->_db->query($sql_delete);
     if (DB::isError($res))
           { error_log('sql_delete $sql_delete ' . $res->getMessage()); }

@@ -31,8 +31,8 @@ $end_char		 = substr(T2R($sand_s),-1);
 //exit;
 //echo 
 //AND BINARY SUBSTRING(`trans`,-1) = '$end_char' LIMIT 4
-$qry	=	mysql_query("SELECT `hdwrd` FROM `hwrd` WHERE `seer` = '$seer_detail' AND (BINARY SUBSTRING(`trans`,-1) = '$end_char' OR BINARY SUBSTRING(`trans`,-2,1) = '_') ORDER BY rand() LIMIT 6");
-while($fet = mysql_fetch_array($qry))
+$qry	=	mysqli_query($connection,"SELECT `hdwrd` FROM `hwrd` WHERE `seer` = '$seer_detail' AND (BINARY SUBSTRING(`trans`,-1) = '$end_char' OR BINARY SUBSTRING(`trans`,-2,1) = '_') ORDER BY rand() LIMIT 6");
+while($fet = mysqli_fetch_array($qry))
 {
 	$fet_wrds[]	=	$fet['hdwrd'];
 }

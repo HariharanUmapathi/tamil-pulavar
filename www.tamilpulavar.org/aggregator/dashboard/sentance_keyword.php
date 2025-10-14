@@ -1,5 +1,5 @@
 ﻿<?php 
-//error_reporting(0);
+//;
 ini_set('max_execution_time',0);
 @session_start();
 if($_SESSION['user_id'] == "")
@@ -13,11 +13,11 @@ if($_SESSION['user_id'] == "")
 $user_id = $_SESSION['user_id'];
 $check = $user_id."finished"; 
 include("../connection.php");
-$results = mysql_query("SELECT `role` FROM `members` WHERE `user_id`='$user_id'");
-$res_row = mysql_fetch_array($results);
+$results = mysqli_query($connection,"SELECT `role` FROM `members` WHERE `user_id`='$user_id'");
+$res_row = mysqli_fetch_array($results);
 $role = $res_row['role'];
-$results1 = mysql_query("SELECT `role` FROM `role` WHERE `value`='$role'");
-$res_row1 = mysql_fetch_array($results1);
+$results1 = mysqli_query($connection,"SELECT `role` FROM `role` WHERE `value`='$role'");
+$res_row1 = mysqli_fetch_array($results1);
 $role_name = $res_row1['role'];
 ?>
 <!DOCTYPE html>
@@ -122,8 +122,8 @@ $role_name = $res_row1['role'];
                      
                      <?php
 					 $v=0;
-					 $result_sentance = mysql_query("SELECT * FROM `sentance` WHERE `$check`!='1' AND `ID1finished`!= '1' LIMIT 10");
-					 while($row_sentance = mysql_fetch_assoc($result_sentance))
+					 $result_sentance = mysqli_query($connection,"SELECT * FROM `sentance` WHERE `$check`!='1' AND `ID1finished`!= '1' LIMIT 10");
+					 while($row_sentance = mysqli_fetch_assoc($result_sentance))
 					 {
 					 $sentances[$v] = $row_sentance['sentances'];	 
 					 $sno[$v] = $row_sentance['sno'];	
@@ -133,8 +133,8 @@ $role_name = $res_row1['role'];
 					
    <?php 
    					 $i=0;
-   					 $result_category = mysql_query("SELECT * FROM `category`");
-					 while($row_category = mysql_fetch_assoc($result_category))
+   					 $result_category = mysqli_query($connection,"SELECT * FROM `category`");
+					 while($row_category = mysqli_fetch_assoc($result_category))
 					 {
 					 $id[$i] = $row_category['id'];
 					 $category[$i] = $row_category['category'];	 
@@ -146,8 +146,8 @@ $role_name = $res_row1['role'];
                          <?php for($k=0;$k<$v;$k++)
 						 {
 							// echo $sublink_id[$k];
-							 $sublink_result = mysql_query("SELECT `sublink` FROM `sublinks` WHERE `sublink_id`='$sublink_id[$k]'");
-							 $row_sublink = mysql_fetch_array($sublink_result);
+							 $sublink_result = mysqli_query($connection,"SELECT `sublink` FROM `sublinks` WHERE `sublink_id`='$sublink_id[$k]'");
+							 $row_sublink = mysqli_fetch_array($sublink_result);
 							 $sublink_name[$k] = $row_sublink['sublink']; 
 							 ?>
                             <div class="row">
@@ -219,18 +219,18 @@ while($i < 10)
 	//$sentance_sno_ar[]=$sentance_sno[$i];
 	//echo $sentance_sno[$i]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 	$p = 0;
-	mysql_query("INSERT INTO `for_admin`(`sno`, `sentance_no`, `users`, `Tamil`, `English`) VALUES 			   ('NULL','$sentance_sno[$i]','$user_id','0','0')");
+	mysqli_query($connection,"INSERT INTO `for_admin`(`sno`, `sentance_no`, `users`, `Tamil`, `English`) VALUES 			   ('NULL','$sentance_sno[$i]','$user_id','0','0')");
 	while($p < $category_count)
 	{
 		
 		 $cat[$i][$p] = $_POST["check$i$p"];
 		//$cat_ar[][] =  $cat[$i][$p];
 		 $val = $cat[$i][$p] ;
-		 mysql_query("UPDATE `for_admin` SET `$val` = '1' WHERE `sentance_no`='$sentance_sno[$i]' AND `users`= '$user_id'");
+		 mysqli_query($connection,"UPDATE `for_admin` SET `$val` = '1' WHERE `sentance_no`='$sentance_sno[$i]' AND `users`= '$user_id'");
 		 $p++;
 	}
 	
-	mysql_query("UPDATE `sentance` SET `$check`= '1' WHERE `sno`='$sentance_sno[$i]'");
+	mysqli_query($connection,"UPDATE `sentance` SET `$check`= '1' WHERE `sno`='$sentance_sno[$i]'");
 	//echo "<br>";
 	
 

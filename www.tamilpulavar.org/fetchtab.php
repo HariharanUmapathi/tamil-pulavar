@@ -18,15 +18,15 @@ if(strpos($tab, 'http') !== false)
 }
 elseif($tab == "tam_com")
 {
-	call_comwrd($val);
+	call_comwrd($val,$connection);
 }
 else
 {
         echo '<h4 class="text-center text-success" style="font-size: 150%; font-weight: bold;">'.$val.'</h4>';
 	if($val != "")
 	{
-		$qry	=	mysql_query("SELECT `meaning` FROM `synonym` WHERE `tword` = '$val'")or die(mysql_error());
-		$fet	=	mysql_fetch_array($qry);
+		$qry	=	mysqli_query($connection,"SELECT `meaning` FROM `synonym` WHERE `tword` = '$val'")or die(mysqli_error($connection));
+		$fet	=	mysqli_fetch_array($qry);
 		$val_m 	= 	$fet['meaning'];
 		if($val != "")
 		{
@@ -40,18 +40,18 @@ else
 			<td><h4 style='color:#f45013;'>synonyms</h4></td>";
 			echo "<td>தேடும் சொல் இந்த அகராதியில் இல்லை</td></tr></table></div></div>";
 		}
-		$qry1	=	mysql_query("SELECT `meaning` FROM `antonyms` WHERE `tword` = '$val' AND `admin_checked`='1'")or die(mysql_error());
-		$fet1	=	mysql_fetch_array($qry1);
+		$qry1	=	mysqli_query($connection,"SELECT `meaning` FROM `antonyms` WHERE `tword` = '$val' AND `admin_checked`='1'")or die(mysqli_error($connection));
+		$fet1	=	mysqli_fetch_array($qry1);
 		$val1 	= 	$fet1['meaning'];
-		$qry_syn_an = mysql_query("SELECT `meaning` FROM `kazhakam` WHERE `tword` = '$val1'")or die(mysql_error());
-		$fet_syn_an	=	mysql_fetch_array($qry_syn_an);
-		$count_syn_an  =    mysql_num_rows($qry_syn_an);
+		$qry_syn_an = mysqli_query($connection,"SELECT `meaning` FROM `kazhakam` WHERE `tword` = '$val1'")or die(mysqli_error($connection));
+		$fet_syn_an	=	mysqli_fetch_array($qry_syn_an);
+		$count_syn_an  =    mysqli_num_rows($qry_syn_an);
 		$val_syn_an 	= 	$fet_syn_an['meaning'];
 		
 		
-		$qry_syn_an1 	= 	mysql_query("SELECT `meaning` FROM `tamtam` WHERE `tword` = '$val1'")or die(mysql_error());
-		$fet_syn_an1	=	mysql_fetch_array($qry_syn_an1);
-		$count_syn_an1  =    mysql_num_rows($qry_syn_an1);
+		$qry_syn_an1 	= 	mysqli_query($connection,"SELECT `meaning` FROM `tamtam` WHERE `tword` = '$val1'")or die(mysqli_error($connection));
+		$fet_syn_an1	=	mysqli_fetch_array($qry_syn_an1);
+		$count_syn_an1  =    mysqli_num_rows($qry_syn_an1);
 		$val_syn_an1 	= 	$fet_syn_an1['meaning'];
 		
 		if($val1 != "")

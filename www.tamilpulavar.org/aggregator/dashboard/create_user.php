@@ -1,5 +1,5 @@
 <?php 
-//error_reporting(0);
+//;
 ini_set('max_execution_time',0);
 @session_start();
 if($_SESSION['user_id'] == "")
@@ -12,11 +12,11 @@ if($_SESSION['user_id'] == "")
 }
 $user_id = $_SESSION['user_id'];
 include("../connection.php");
-$results = mysql_query("SELECT `role` FROM `members` WHERE `user_id`='$user_id'");
-$res_row = mysql_fetch_array($results);
+$results = mysqli_query($connection,"SELECT `role` FROM `members` WHERE `user_id`='$user_id'");
+$res_row = mysqli_fetch_array($results);
 $role = $res_row['role'];
-$results1 = mysql_query("SELECT `role` FROM `role` WHERE `value`='$role'");
-$res_row1 = mysql_fetch_array($results1);
+$results1 = mysqli_query($connection,"SELECT `role` FROM `role` WHERE `value`='$role'");
+$res_row1 = mysqli_fetch_array($results1);
 $role_name = $res_row1['role'];
 ?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -173,8 +173,8 @@ $role_name = $res_row1['role'];
       <label class="control-label"  for="password_confirm">Role</label>
       <div class="controls">
         <select class="form-control" name="role">
-        <?php $results_role = mysql_query("SELECT * FROM `role` WHERE `sno` != '1'");
-		while($row_role = mysql_fetch_assoc($results_role))
+        <?php $results_role = mysqli_query($connection,"SELECT * FROM `role` WHERE `sno` != '1'");
+		while($row_role = mysqli_fetch_assoc($results_role))
 		{ ?>
           <option value="<?php echo $row_role['value']; ?>"><?php echo $row_role['role']; ?></option>
          <?php
@@ -230,8 +230,8 @@ $role_name = $res_row1['role'];
 	$password = $_POST['password'];
 	$user_role = $_POST['role'];
 	$check = $user_id_insert."finished";
-	mysql_query("INSERT INTO `members`(`sno`, `user_id`, `user_name`, `password`, `role`) VALUES ('NULL','$user_id_insert','$username','$password','$user_role')");
-	mysql_query("ALTER TABLE `sentance` ADD `$check` VARCHAR( 255 ) NOT NULL");
+	mysqli_query($connection,"INSERT INTO `members`(`sno`, `user_id`, `user_name`, `password`, `role`) VALUES ('NULL','$user_id_insert','$username','$password','$user_role')");
+	mysqli_query($connection,"ALTER TABLE `sentance` ADD `$check` VARCHAR( 255 ) NOT NULL");
 	?>
     <script>
     alert("Successfully Inserted");

@@ -3121,11 +3121,11 @@ if (md5(file_get_contents("./demo/demo46_in_hungarian.php")) == "4e14835a935b5d7
 else
   $files_ko[] = "<span style=\"color:#F33\">corrupted - ./demo/demo46_in_hungarian.php (please replace this file by a correct one)</span>
 ";
-if (md5(file_get_contents("./demo/demo55_mysql_container.php")) == "4c366abab53c31fe812b24334694a6b9")
-  $files_ok[] = "<span style=\"color:#3A3\">ok - ./demo/demo55_mysql_container.php</span>
+if (md5(file_get_contents("./demo/demo55_mysqli_container.php")) == "4c366abab53c31fe812b24334694a6b9")
+  $files_ok[] = "<span style=\"color:#3A3\">ok - ./demo/demo55_mysqli_container.php</span>
 ";
 else
-  $files_ko[] = "<span style=\"color:#F33\">corrupted - ./demo/demo55_mysql_container.php (please replace this file by a correct one)</span>
+  $files_ko[] = "<span style=\"color:#F33\">corrupted - ./demo/demo55_mysqli_container.php (please replace this file by a correct one)</span>
 ";
 if (md5(file_get_contents("./demo/demo53_in_armenian.php")) == "4a824e6b72a5121931d0d8b7709ba746")
   $files_ok[] = "<span style=\"color:#3A3\">ok - ./demo/demo53_in_armenian.php</span>

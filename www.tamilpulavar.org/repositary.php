@@ -2,6 +2,6 @@
 <?php
 include("connection.php");
 $val	=	$_POST['val'];
-$val	=	mysql_real_escape_string($val);
-mysql_query("INSERT INTO `repositary` (`sno`,`word`) values('','$val') ") or die(mysql_error());
+$val	=	mysqli_real_escape_string($connection,$val);
+mysqli_query($connection,"INSERT INTO `repositary` (`sno`,`word`) values('','$val') ") or die(mysqli_error($connection));
 ?>

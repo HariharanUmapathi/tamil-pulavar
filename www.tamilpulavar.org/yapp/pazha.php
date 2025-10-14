@@ -23,12 +23,12 @@ $val	=	$_POST['wrd'];
 $val1   =	T2R($val);
 if(substr($val1,-2,1) == "_")
 $val2   =	substr($val1,0,-2).substr($val1,-1);
-$qry	=	mysql_query("SELECT * FROM `proverbs` WHERE `literate` COLLATE latin1_bin LIKE '%$val2%' AND `literate` NOT LIKE '%_$val2%' OR `literate` COLLATE latin1_bin LIKE '%$val1%' AND`admin_checked`='1'") or die(mysql_error());	
-/*$qry	=	mysql_query("SELECT * FROM `proverbs` WHERE `literate` COLLATE latin1_bin LIKE '$val1%' OR `literate` COLLATE latin1_bin LIKE '%$val1%' 
-						  OR `literate` COLLATE latin1_bin LIKE '%$val1' AND `admin_checked`='1'") or die(mysql_error());*/
-if(mysql_num_rows($qry))
+$qry	=	mysqli_query($connection,"SELECT * FROM `proverbs` WHERE `literate` COLLATE latin1_bin LIKE '%$val2%' AND `literate` NOT LIKE '%_$val2%' OR `literate` COLLATE latin1_bin LIKE '%$val1%' AND`admin_checked`='1'") or die(mysqli_error($connection));	
+/*$qry	=	mysqli_query($connection,"SELECT * FROM `proverbs` WHERE `literate` COLLATE latin1_bin LIKE '$val1%' OR `literate` COLLATE latin1_bin LIKE '%$val1%' 
+						  OR `literate` COLLATE latin1_bin LIKE '%$val1' AND `admin_checked`='1'") or die(mysqli_error($connection));*/
+if(mysqli_num_rows($qry))
 {
-	while($fetch  =	mysql_fetch_array($qry))
+	while($fetch  =	mysqli_fetch_array($qry))
 	{
 		echo $fetch['proverb'];
 		echo "<br><br>";

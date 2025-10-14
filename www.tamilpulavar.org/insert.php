@@ -8,8 +8,8 @@
 <body>
 <?php
 include("connection.php");
-$wrds	= mysql_query("SELECT `eword` FROM `palsdict` UNION SELECT `eword` FROM `chennai_tam` WHERE `eword` NOT IN (SELECT `hdword` FROM `ewords` WHERE `hdword` = `eword`)")or die(mysql_error());
-while($fet = mysql_fetch_array($wrds))
+$wrds	= mysqli_query($connection,"SELECT `eword` FROM `palsdict` UNION SELECT `eword` FROM `chennai_tam` WHERE `eword` NOT IN (SELECT `hdword` FROM `ewords` WHERE `hdword` = `eword`)")or die(mysqli_error($connection));
+while($fet = mysqli_fetch_array($wrds))
 {
 	$ewords[] = $fet['eword'];
 	echo "</br>";
@@ -43,9 +43,9 @@ for($i=0;$i<count($ewords);$i++)
 	$txt  = str_replace("&nbsp;","",$txt);
 	$txt  = strip_tags($txt);
 	$txt  = trim($txt);	
-	$txt  = mysql_real_escape_string($txt);
+	$txt  = mysqli_real_escape_string($connection,$txt);
 	//$txt  = str_replace("\r","",$txt);
-	mysql_query("INSERT INTO `chennai_tam` (`sno`,`eword`,`meaning`) values ('','$ewords[$i]','$txt')")or die(mysql_error());
+	mysqli_query($connection,"INSERT INTO `chennai_tam` (`sno`,`eword`,`meaning`) values ('','$ewords[$i]','$txt')")or die(mysqli_error($connection));
 	//echo $txt; 
 	//echo "</br>";
 	/*if($i==10)

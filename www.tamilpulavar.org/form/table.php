@@ -5,7 +5,7 @@ if($_SESSION['id']=="")
 {
 	header('location:permission.php');
 }
-error_reporting(0);
+;
 include('assets/config.php');    //include of db config file
 include ('paginate.php'); //include of paginat page
 
@@ -144,8 +144,8 @@ include ('paginate.php'); //include of paginat page
 			<?php
             $id = $_SESSION['id'];
             $per_page = 10;         // number of results to show per page
-            $result = mysql_query("SELECT * FROM `antonyms` WHERE `user_id` = '$id'");
-            $total_results = mysql_num_rows($result);
+            $result = mysqli_query($connection,"SELECT * FROM `antonyms` WHERE `user_id` = '$id'");
+            $total_results = mysqli_num_rows($result);
             $total_pages = ceil($total_results / $per_page);//total pages we going to have
             
             //-------------if page is setcheck------------------//
@@ -193,9 +193,9 @@ include ('paginate.php'); //include of paginat page
                       
                         // echo out the contents of each row into a table
                         echo "<tr " . $cls . ">";
-                        echo '<td>' . mysql_result($result, $i, 'tword') . '</td>';
-                        echo '<td>' . mysql_result($result, $i, 'meaning') . '</td>';
-						 echo '<td>' . mysql_result($result, $i, 'tword_meaning') . '</td>';
+                        echo '<td>' . mysqli_result($result, $i, 'tword') . '</td>';
+                        echo '<td>' . mysqli_result($result, $i, 'meaning') . '</td>';
+						 echo '<td>' . mysqli_result($result, $i, 'tword_meaning') . '</td>';
                         echo "</tr>";
                     }       
                     // close table>
@@ -234,8 +234,8 @@ include ('paginate.php'); //include of paginat page
                                 <?php
                     			 echo "<table class='table table-bordered'>";
                    				 echo "<tr><td>Proverbs</td></tr>";
-								 $res_prov = mysql_query("SELECT * FROM `proverbs` WHERE `user_id` = '$id'");
-								 while($row_prov = mysql_fetch_array($res_prov))
+								 $res_prov = mysqli_query($connection,"SELECT * FROM `proverbs` WHERE `user_id` = '$id'");
+								 while($row_prov = mysqli_fetch_array($res_prov))
 								 {
 									echo "<tr><td>".$row_prov['proverb']."</td></tr>"; 
 								 }

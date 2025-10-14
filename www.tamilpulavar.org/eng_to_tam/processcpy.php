@@ -33,17 +33,17 @@ function perfect($t,$ans)
 		return $ans;					   
 	}
 
-mysql_connect("localhost","root","")or die(mysql_error());
-mysql_select_db("word")or die(mysql_error());
-mysql_query("SET NAMES 'utf8'");
+mysqli_connect("localhost","root","")or die(mysqli_error($connection));
+mysqli_select_db("word")or die(mysqli_error($connection));
+mysqli_query($connection,"SET NAMES 'utf8'");
 foreach($cnts as $sent)
 {
 $arr_sent		    =	explode(" ",$sent);
 $verb			    =	end($arr_sent);
 $sub			     = 	$arr_sent[0];
-$sub			     =	mysql_real_escape_string($sub);
-$sub_en		      =	mysql_query("SELECT * FROM `word` WHERE `C` = '$sub' ")or die(mysql_error());
-$s_e		         =	mysql_fetch_array($sub_en);
+$sub			     =	mysqli_real_escape_string($sub);
+$sub_en		      =	mysqli_query($connection,"SELECT * FROM `word` WHERE `C` = '$sub' ")or die(mysqli_error($connection));
+$s_e		         =	mysqli_fetch_array($sub_en);
 $verb_wrd			=	T2R($verb);
 $special_word		=	array(
 								"see"  	 =>	"காண்",

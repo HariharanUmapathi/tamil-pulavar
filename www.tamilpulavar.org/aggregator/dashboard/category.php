@@ -1,5 +1,5 @@
 ﻿<?php 
-error_reporting(0);
+;
 ini_set('max_execution_time',0);
 @session_start();
 if($_SESSION['user_id'] == "")
@@ -12,11 +12,11 @@ if($_SESSION['user_id'] == "")
 }
 $user_id = $_SESSION['user_id'];
 include("../connection.php");
-$results = mysql_query("SELECT `role` FROM `members` WHERE `user_id`='$user_id'");
-$res_row = mysql_fetch_array($results);
+$results = mysqli_query($connection,"SELECT `role` FROM `members` WHERE `user_id`='$user_id'");
+$res_row = mysqli_fetch_array($results);
 $role = $res_row['role'];
-$results1 = mysql_query("SELECT `role` FROM `role` WHERE `value`='$role'");
-$res_row1 = mysql_fetch_array($results1);
+$results1 = mysqli_query($connection,"SELECT `role` FROM `role` WHERE `value`='$role'");
+$res_row1 = mysqli_fetch_array($results1);
 $role_name = $res_row1['role'];
 ?>
 <!DOCTYPE html>
@@ -201,8 +201,8 @@ function call_update()
                 <ul class="list-group">
                 <li class="list-group-item active"><b>Category List</b></li>
                 <?php 
-			  $res_category = mysql_query("SELECT * FROM `category`");
-			  while($row_cat =  mysql_fetch_assoc($res_category))
+			  $res_category = mysqli_query($connection,"SELECT * FROM `category`");
+			  while($row_cat =  mysqli_fetch_assoc($res_category))
 			  {
 				  $category_name = $row_cat['category'];
 				  $category_id = $row_cat['id'];
@@ -277,8 +277,8 @@ if(isset($_POST['enter']))
 {
 
 	$category = $_POST['category'];
-	mysql_query("INSERT INTO `category`(`id`, `category`) VALUES ('NULL','$category')");
-	mysql_query("ALTER TABLE `for_admin` ADD `$category` VARCHAR( 255 ) NOT NULL");
+	mysqli_query($connection,"INSERT INTO `category`(`id`, `category`) VALUES ('NULL','$category')");
+	mysqli_query($connection,"ALTER TABLE `for_admin` ADD `$category` VARCHAR( 255 ) NOT NULL");
 ?>
 <script>
 alert("Successfully Inserted");

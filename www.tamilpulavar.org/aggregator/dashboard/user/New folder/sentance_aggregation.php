@@ -19,7 +19,7 @@ function sentance($string,$ref_id)
 		foreach($sentence as $sentences)
 		{
 			
-		mysql_query("INSERT INTO `sentance` (`sno`,`sentances`,`link_id`) VALUES ('NULL','$sentences','$ref_id')");
+		mysqli_query($connection,"INSERT INTO `sentance` (`sno`,`sentances`,`link_id`) VALUES ('NULL','$sentences','$ref_id')");
 		
 		//$word = explode(" ",$sentences);
 //		foreach($word as $words)
@@ -30,7 +30,7 @@ function sentance($string,$ref_id)
 //					}
 //					else
 //					{
-//					mysql_query("INSERT INTO `words` (`sno`,`words`,`link_id`) VALUES ('NULL','$words','$ref_id')");	
+//					mysqli_query($connection,"INSERT INTO `words` (`sno`,`words`,`link_id`) VALUES ('NULL','$words','$ref_id')");	
 //					}
 //	  			}
 	  	}

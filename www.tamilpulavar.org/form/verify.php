@@ -18,13 +18,13 @@
 <?php 
 $act_code = $_REQUEST['code'];
 include('../connection.php');
-$result_act = mysql_query("SELECT `sno` FROM `members` WHERE `activation`='$act_code'");
-$count_act = mysql_num_rows($result_act);
-$row_act = mysql_fetch_array($result_act);
+$result_act = mysqli_query($connection,"SELECT `sno` FROM `members` WHERE `activation`='$act_code'");
+$count_act = mysqli_num_rows($result_act);
+$row_act = mysqli_fetch_array($result_act);
 if($count_act == 1)
 {
 	$no = $row_act['sno'];
-	mysql_query("UPDATE `members` SET `activation`='1' WHERE `sno`='$no'");
+	mysqli_query($connection,"UPDATE `members` SET `activation`='1' WHERE `sno`='$no'");
 	?>
     <div class="row">
     <div class="col-md-6 col-md-offset-4 " style="margin-top:120px;">
@@ -43,8 +43,8 @@ else
     <img src="img/big_oops.png" class="img-responsive" />
     <?php
 	$no = $row_act['sno'];
-	$result_act1 = mysql_query("SELECT * FROM `members` WHERE `activation`='1' AND `sno`='$no'");
-	$count_act1 = mysql_num_rows($result_act1);
+	$result_act1 = mysqli_query($connection,"SELECT * FROM `members` WHERE `activation`='1' AND `sno`='$no'");
+	$count_act1 = mysqli_num_rows($result_act1);
 	if($count_act1  == 1)
 	{
 	?>

@@ -6,12 +6,9 @@
 </head>
 <body>
 <?php
-ini_set('max_execution_time', 0);
-mysql_connect("localhost","root","");
-mysql_select_db("word");
-mysql_query("SET NAMES 'utf8'");
-$qry = mysql_query("SELECT `eword` FROM `word` WHERE `eword` LIKE 'w%' AND `eword` NOT LIKE 'wrd%' AND `eword` NOT IN (SELECT `eword` FROM `palsdict` WHERE`eword` LIKE 'w%')");
-while($fet	=	mysql_fetch_array($qry))
+include("connection.php");
+$qry = mysqli_query($connection,"SELECT `eword` FROM `word` WHERE `eword` LIKE 'w%' AND `eword` NOT LIKE 'wrd%' AND `eword` NOT IN (SELECT `eword` FROM `palsdict` WHERE`eword` LIKE 'w%')");
+while($fet	=	mysqli_fetch_array($qry))
 {
 $ewords[]	=	$fet['eword'];
 }
@@ -46,9 +43,9 @@ for($i=0;$i<count($ewords);$i++)
 	$txt  = str_replace("&nbsp;","",$txt);
 	$txt  = strip_tags($txt);
 	$txt  = trim($txt);	
-	$txt  = mysql_real_escape_string($txt);
+	$txt  = mysqli_real_escape_string($connection,$txt);
 	//$txt  = str_replace("\r","",$txt);
-	mysql_query("INSERT INTO `palsdict` (`sno`,`eword`,`meaning`) values ('','$ewords[$i]','$txt')")or die(mysql_error());
+	mysqli_query($connection,"INSERT INTO `palsdict` (`sno`,`eword`,`meaning`) values ('','$ewords[$i]','$txt')")or die(mysqli_error($connection));
 	//echo $txt; 
 	//echo "</br>";
 	/*if($i==10)

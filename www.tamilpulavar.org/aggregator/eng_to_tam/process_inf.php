@@ -104,8 +104,8 @@ else
 	elseif($l_1 == "i")
 	{
 	$f_v		  =	$tf_en;
-	$q_w	  	  =	mysql_query("SELECT `eword` FROM `word` where `tword` = '$f_v'")or die(mysql_error());
-	if(!mysql_num_rows($q_w))
+	$q_w	  	  =	mysqli_query($connection,"SELECT `eword` FROM `word` where `tword` = '$f_v'")or die(mysqli_error($connection));
+	if(!mysqli_num_rows($q_w))
 	{
 	$f_v		=	substr($tf_en,0,-1).'u';
 	}
@@ -296,18 +296,18 @@ if(!isset($f_v))
 	}
 }
 
-$qen_wrd	  =	mysql_query("SELECT `eword` FROM `word` where `tword` = '$inf0' AND `tense` = 0 AND `wordid` <> '' ") or die(mysql_error());
-if(mysql_num_rows($qen_wrd) != 0 )
+$qen_wrd	  =	mysqli_query($connection,"SELECT `eword` FROM `word` where `tword` = '$inf0' AND `tense` = 0 AND `wordid` <> '' ") or die(mysqli_error($connection));
+if(mysqli_num_rows($qen_wrd) != 0 )
 	{
-		while($fet_enwd	 =	mysql_fetch_array($qen_wrd))
+		while($fet_enwd	 =	mysqli_fetch_array($qen_wrd))
 		{
 			$inf_f[]		=	$fet_enwd['eword'];
 		}
 	}
 	else
 	{
-		$qen_wrd	 		=	mysql_query("SELECT `eword` FROM `word` where `tword` LIKE '%$inf0'  AND `tense` = 0 ") or die(mysql_error());
-		while($fet_enwd	 =	mysql_fetch_array($qen_wrd))
+		$qen_wrd	 		=	mysqli_query($connection,"SELECT `eword` FROM `word` where `tword` LIKE '%$inf0'  AND `tense` = 0 ") or die(mysqli_error($connection));
+		while($fet_enwd	 =	mysqli_fetch_array($qen_wrd))
 		{
 			$inf_f[]		=	$fet_enwd['eword'];
 		}
@@ -315,11 +315,11 @@ if(mysql_num_rows($qen_wrd) != 0 )
 $f_v		  =	R2T(ltrim(rtrim($f_v)));
 if($t_no	==	1 || $t_no	==	3)
 {
-	$qen_wrd	  =	mysql_query("SELECT `eword` FROM `word` where `tword` = '$f_v' AND `tense` = 0 AND `wordid` <> '' ") or die(mysql_error());
-	if(mysql_num_rows($qen_wrd) != 0)
+	$qen_wrd	  =	mysqli_query($connection,"SELECT `eword` FROM `word` where `tword` = '$f_v' AND `tense` = 0 AND `wordid` <> '' ") or die(mysqli_error($connection));
+	if(mysqli_num_rows($qen_wrd) != 0)
 	{	
 		$k =0;	
-		while($fet_enwd	 =	mysql_fetch_array($qen_wrd))
+		while($fet_enwd	 =	mysqli_fetch_array($qen_wrd))
 		{
 				$f_ev[$k]		 =	$fet_enwd['eword'];
 				if($v_p == "t_pm_s" || $v_p == "t_pf_s" || $v_p == "t_pit_s")
@@ -336,10 +336,10 @@ if($t_no	==	1 || $t_no	==	3)
 	}
 	else
 	{
-		$qen_wrd	  =	mysql_query("SELECT `eword` FROM `word` where `tword` LIKE '%$f_v' AND `tense` = 0  ") or die(mysql_error());
-		$fet_enwd	 =	mysql_fetch_array($qen_wrd);
+		$qen_wrd	  =	mysqli_query($connection,"SELECT `eword` FROM `word` where `tword` LIKE '%$f_v' AND `tense` = 0  ") or die(mysqli_error($connection));
+		$fet_enwd	 =	mysqli_fetch_array($qen_wrd);
 		$k =0;	
-		while($fet_enwd	 =	mysql_fetch_array($qen_wrd))
+		while($fet_enwd	 =	mysqli_fetch_array($qen_wrd))
 		{
 				$f_ev[$k]		 =	$fet_enwd['eword'];
 				if($v_p == "t_pm_s" || $v_p == "t_pf_s" || $v_p == "t_pit_s")
@@ -357,17 +357,17 @@ if($t_no	==	1 || $t_no	==	3)
 }
 elseif($t_no	==	2)
 {
-	$qen_wrd	  =	mysql_query("SELECT `eword` FROM `word` where `tword` = '$f_v' AND `tense` = 1  AND `wordid` <> ''") or die(mysql_error());
-	if(mysql_num_rows($qen_wrd) < 1)
+	$qen_wrd	  =	mysqli_query($connection,"SELECT `eword` FROM `word` where `tword` = '$f_v' AND `tense` = 1  AND `wordid` <> ''") or die(mysqli_error($connection));
+	if(mysqli_num_rows($qen_wrd) < 1)
 	{	
-	while($fet_enwd	 =	mysql_fetch_array($qen_wrd))
+	while($fet_enwd	 =	mysqli_fetch_array($qen_wrd))
 	{
 	$f_ev[]		 =	$fet_enwd['eword'];
 	}
 	}
 	else
 	{
-	while($fet_enwd	 =	mysql_fetch_array($qen_wrd))
+	while($fet_enwd	 =	mysqli_fetch_array($qen_wrd))
 	{
 	$f_ev[]		 =	$fet_enwd['eword'];
 	}
@@ -375,17 +375,17 @@ elseif($t_no	==	2)
 }
 elseif($t_no	==	4 || $t_no	==	5 || $t_no == 6 || $t_no == 10 || $t_no == 11 || $t_no == 12)
 {
-$qen_wrd	  =	mysql_query("SELECT `eword` FROM `word` where `tword` = '$f_v' AND `tense` = 3 AND `wordid` <> '' ") or die(mysql_error());
-if(mysql_num_rows($qen_wrd) < 1)
+$qen_wrd	  =	mysqli_query($connection,"SELECT `eword` FROM `word` where `tword` = '$f_v' AND `tense` = 3 AND `wordid` <> '' ") or die(mysqli_error($connection));
+if(mysqli_num_rows($qen_wrd) < 1)
 	{
-	while($fet_enwd	 =	mysql_fetch_array($qen_wrd))
+	while($fet_enwd	 =	mysqli_fetch_array($qen_wrd))
 	{
 	$f_ev[]		 =	$fet_enwd['eword'];
 	}
 	}
 else
 	{
-		while($fet_enwd	 =	mysql_fetch_array($qen_wrd))
+		while($fet_enwd	 =	mysqli_fetch_array($qen_wrd))
 		{
 		$f_ev[]		 =	$fet_enwd['eword'];
 		}
@@ -393,14 +393,14 @@ else
 }
 elseif($t_no	==	7 || $t_no	==	8 || $t_no == 9 )
 {
-$qen_wrd	  =	mysql_query("SELECT `eword` FROM `word` where `tword` LIKE '%$f_v' AND `tense` = 2 AND `wordid` <>''") or die(mysql_error());
-if(mysql_num_rows($qen_wrd) < 1)
+$qen_wrd	  =	mysqli_query($connection,"SELECT `eword` FROM `word` where `tword` LIKE '%$f_v' AND `tense` = 2 AND `wordid` <>''") or die(mysqli_error($connection));
+if(mysqli_num_rows($qen_wrd) < 1)
 {							   	
-$qen_wrd	  =	mysql_query("SELECT `eword` FROM `word` where `tword` = '$f_v'  AND `tense` = 2 ") or die(mysql_error());
-if(mysql_num_rows($qen_wrd) == 1)
+$qen_wrd	  =	mysqli_query($connection,"SELECT `eword` FROM `word` where `tword` = '$f_v'  AND `tense` = 2 ") or die(mysqli_error($connection));
+if(mysqli_num_rows($qen_wrd) == 1)
 	{							 
-		$qen_wrd	  =	mysql_query("SELECT `eword` FROM `word` where `tword` LIKE '%$f_v' AND `tense` = 1 ") or die(mysql_error());
-		while($fet_enwd	 =	mysql_fetch_array($qen_wrd))
+		$qen_wrd	  =	mysqli_query($connection,"SELECT `eword` FROM `word` where `tword` LIKE '%$f_v' AND `tense` = 1 ") or die(mysqli_error($connection));
+		while($fet_enwd	 =	mysqli_fetch_array($qen_wrd))
 		{
 		$f_ev[]		 =	$fet_enwd['eword'];
 		}
@@ -408,7 +408,7 @@ if(mysql_num_rows($qen_wrd) == 1)
 else
 	{
 		
-		while($fet_enwd	 =	mysql_fetch_array($qen_wrd))
+		while($fet_enwd	 =	mysqli_fetch_array($qen_wrd))
 		{
 		$f_ev[]		 =	$fet_enwd['eword'];
 		}
@@ -416,17 +416,17 @@ else
 }
 else
 {
-$qen_wrd	  =	mysql_query("SELECT `eword` FROM `word` where `tword` LIKE '%$f_v' AND  `tense` = 2 ") or die(mysql_error());
-if(mysql_num_rows($qen_wrd) == 1)
+$qen_wrd	  =	mysqli_query($connection,"SELECT `eword` FROM `word` where `tword` LIKE '%$f_v' AND  `tense` = 2 ") or die(mysqli_error($connection));
+if(mysqli_num_rows($qen_wrd) == 1)
 	{							 
-		while($fet_enwd	 =	mysql_fetch_array($qen_wrd))
+		while($fet_enwd	 =	mysqli_fetch_array($qen_wrd))
 		{
 		$f_ev[]		 =	$fet_enwd['eword'];
 		}
 	}
 else
 	{
-		while($fet_enwd	 =	mysql_fetch_array($qen_wrd))
+		while($fet_enwd	 =	mysqli_fetch_array($qen_wrd))
 		{	
 		$f_ev[]		 =	$fet_enwd['eword'];
 		}
@@ -501,8 +501,8 @@ else
 $p_id		 =	7;
 if(!isset($plu))
 {		
-$qen_wrd	  =	mysql_query("SELECT `eword` FROM `word` where `tword` = '$s' AND `nid` = '$p_id' AND `wordid` = ''") or die(mysql_error());
-$fet_enwd	 =	mysql_fetch_array($qen_wrd);
+$qen_wrd	  =	mysqli_query($connection,"SELECT `eword` FROM `word` where `tword` = '$s' AND `nid` = '$p_id' AND `wordid` = ''") or die(mysqli_error($connection));
+$fet_enwd	 =	mysqli_fetch_array($qen_wrd);
 if(count($f_ev1) < count($inf_f))
 {
 	foreach($inf_f as $inf_fe)
@@ -533,8 +533,8 @@ else
 }
 else
 {
-$qen_wrd	  =	mysql_query("SELECT `altword` FROM `word` where `tword` = '$s' AND `nid` = '$p_id AND `wordid` = ''") or die(mysql_error());
-$fet_enwd	 =	mysql_fetch_array($qen_wrd);
+$qen_wrd	  =	mysqli_query($connection,"SELECT `altword` FROM `word` where `tword` = '$s' AND `nid` = '$p_id AND `wordid` = ''") or die(mysqli_error($connection));
+$fet_enwd	 =	mysqli_fetch_array($qen_wrd);
 if(count($f_ev1) < count($inf_f))
 {
 	foreach($inf_f as $inf_fe)

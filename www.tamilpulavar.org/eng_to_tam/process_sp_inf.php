@@ -6,10 +6,10 @@ $sent			    =	str_replace(".","",$sent);
 $arr_sent		    =	explode(" ",$sent);
 $verb			    =	end($arr_sent);
 $sub			     = 	$arr_sent[0];
-$sub			     =	mysql_real_escape_string($sub);
+$sub			     =	mysqli_real_escape_string($sub);
 
-$sub_en		      =	mysql_query("SELECT * FROM `word` WHERE `tword` = '$sub' ")or die(mysql_error());
-$s_e		         =	mysql_fetch_array($sub_en);
+$sub_en		      =	mysqli_query($connection,"SELECT * FROM `word` WHERE `tword` = '$sub' ")or die(mysqli_error($connection));
+$s_e		         =	mysqli_fetch_array($sub_en);
 $verb_wrd			=	T2R($verb);
 $inf				  =	$arr_sent[1];
 $inf_en			   =	T2R($inf);
@@ -31,18 +31,18 @@ if(substr($inf1,-2) == "_y" || substr($inf1,-2) == "_r" || substr($inf1,-2) == "
 	}
 }
 $inf0				 =	R2T(ltrim(rtrim($inf0)));
-$qen_wrd	  =	mysql_query("SELECT `eword` FROM `word` where `tword` = '$inf0' AND `tense` = 0 AND `wordid` <> '' ") or die(mysql_error());
-if(mysql_num_rows($qen_wrd) != 0 )
+$qen_wrd	  =	mysqli_query($connection,"SELECT `eword` FROM `word` where `tword` = '$inf0' AND `tense` = 0 AND `wordid` <> '' ") or die(mysqli_error($connection));
+if(mysqli_num_rows($qen_wrd) != 0 )
 	{
-		while($fet_enwd	 =	mysql_fetch_array($qen_wrd))
+		while($fet_enwd	 =	mysqli_fetch_array($qen_wrd))
 		{
 			$inf_f[]		=	$fet_enwd['eword'];
 		}
 	}
 	else
 	{
-		$qen_wrd	 		=	mysql_query("SELECT `eword` FROM `word` where `tword` LIKE '%$inf0'  AND `tense` = 0 ") or die(mysql_error());
-		while($fet_enwd	 =	mysql_fetch_array($qen_wrd))
+		$qen_wrd	 		=	mysqli_query($connection,"SELECT `eword` FROM `word` where `tword` LIKE '%$inf0'  AND `tense` = 0 ") or die(mysqli_error($connection));
+		while($fet_enwd	 =	mysqli_fetch_array($qen_wrd))
 		{
 			$inf_f[]		=	$fet_enwd['eword'];
 		}

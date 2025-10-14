@@ -1,5 +1,5 @@
 ﻿<?php 
-error_reporting(0);
+;
 ini_set('max_execution_time',0);
 @session_start();
 if($_SESSION['user_id'] == "")
@@ -13,11 +13,11 @@ if($_SESSION['user_id'] == "")
 $user_id = $_SESSION['user_id'];
 $check = $user_id."finished"; 
 include("../connection.php");
-$results = mysql_query("SELECT `role` FROM `members` WHERE `user_id`='$user_id'");
-$res_row = mysql_fetch_array($results);
+$results = mysqli_query($connection,"SELECT `role` FROM `members` WHERE `user_id`='$user_id'");
+$res_row = mysqli_fetch_array($results);
 $role = $res_row['role'];
-$results1 = mysql_query("SELECT `role` FROM `role` WHERE `value`='$role'");
-$res_row1 = mysql_fetch_array($results1);
+$results1 = mysqli_query($connection,"SELECT `role` FROM `role` WHERE `value`='$role'");
+$res_row1 = mysqli_fetch_array($results1);
 $role_name = $res_row1['role'];
 ?>
 <!DOCTYPE html>
@@ -159,8 +159,8 @@ return false;
                      
                      <?php
 					
-						/* $result_user = mysql_query("SELECT * FROM `members`");
-					 while($row_user = mysql_fetch_assoc($result_user))
+						/* $result_user = mysqli_query($connection,"SELECT * FROM `members`");
+					 while($row_user = mysqli_fetch_assoc($result_user))
 					 {
 					 $checked[] = $row_user['user_id']."finished";	 
 					
@@ -169,8 +169,8 @@ return false;
 						
 						
    					
-   					 $result_category = mysql_query("SELECT * FROM `category`");
-					 while($row_category = mysql_fetch_assoc($result_category))
+   					 $result_category = mysqli_query($connection,"SELECT * FROM `category`");
+					 while($row_category = mysqli_fetch_assoc($result_category))
 					 {
 					 $id[] = $row_category['id'];
 					 $category[] = $row_category['category'];	 
@@ -178,14 +178,14 @@ return false;
 					 }
 						 
         								
-					 $result_sentance = mysql_query("SELECT * FROM `sentance` WHERE  " . implode( ' = 1 OR ', $checked ) ." ") or die(mysql_error());
+					 $result_sentance = mysqli_query($connection,"SELECT * FROM `sentance` WHERE  " . implode( ' = 1 OR ', $checked ) ." ") or die(mysqli_error($connection));
 					 
 					 
 
 					// echo $result_sentance;
-					// $total_sentance_processed[] = mysql_num_rows($result_sentance);
+					// $total_sentance_processed[] = mysqli_num_rows($result_sentance);
 					 
-					 while($row_sentance = mysql_fetch_assoc($result_sentance))
+					 while($row_sentance = mysqli_fetch_assoc($result_sentance))
 					 {
 					 $sno[] = $row_sentance['sno'];
 					 $sentances[] = $row_sentance['sentances'];	
@@ -195,8 +195,8 @@ return false;
 					
 					for($h=0; $h<10;$h++)
 					{
-					$result_admin_sentance = mysql_query("SELECT * FROM `for_admin` WHERE `sentance_no`='$sno[$h]'");
-					 while($row_admin_sentance = mysql_fetch_assoc($result_admin_sentance)) 
+					$result_admin_sentance = mysqli_query($connection,"SELECT * FROM `for_admin` WHERE `sentance_no`='$sno[$h]'");
+					 while($row_admin_sentance = mysqli_fetch_assoc($result_admin_sentance)) 
 					 {
 						 $s_no = $row_admin_sentance['sentance_no'];
 						 echo $s_no."-";
@@ -220,8 +220,8 @@ return false;
 				
 				
    					
-   					/* $result_category = mysql_query("SELECT * FROM `category`");
-					 while($row_category = mysql_fetch_assoc($result_category))
+   					/* $result_category = mysqli_query($connection,"SELECT * FROM `category`");
+					 while($row_category = mysqli_fetch_assoc($result_category))
 					 {
 					 $id[] = $row_category['id'];
 					 $category[] = $row_category['category'];	 
@@ -232,18 +232,18 @@ return false;
                     
                     <?php
 					
-					$result_user = mysql_query("SELECT * FROM `members` WHERE `sno` != '1'");
-					 while($row_user = mysql_fetch_assoc($result_user))
+					$result_user = mysqli_query($connection,"SELECT * FROM `members` WHERE `sno` != '1'");
+					 while($row_user = mysqli_fetch_assoc($result_user))
 					 {
 					 $checked[] = $row_user['user_id']."finished";	 
 					
 					 }
 					//echo $us_id = $user_id."finished";
 				 $v=0;
-				 $result_sentance = mysql_query("SELECT * FROM `sentance` WHERE " . implode( ' = 1 OR ', $checked ) ." AND `$check` != '1' LIMIT 10");
-				$count_result_sentance = mysql_num_rows($result_sentance); 
+				 $result_sentance = mysqli_query($connection,"SELECT * FROM `sentance` WHERE " . implode( ' = 1 OR ', $checked ) ." AND `$check` != '1' LIMIT 10");
+				$count_result_sentance = mysqli_num_rows($result_sentance); 
 					//echo "SELECT * FROM `sentance` WHERE " . implode( ' = 1 OR ', $checked ) ." AND `$check` != '1' LIMIT 10";
-					 while($row_sentance = mysql_fetch_assoc($result_sentance))
+					 while($row_sentance = mysqli_fetch_assoc($result_sentance))
 					 {
 					 $sentances[$v] = $row_sentance['sentances'];	 
 					 $sno[$v] = $row_sentance['sno'];
@@ -253,8 +253,8 @@ return false;
 					
    <?php 
    					 $i=0;
-   					 $result_category = mysql_query("SELECT * FROM `category`");
-					 while($row_category = mysql_fetch_assoc($result_category))
+   					 $result_category = mysqli_query($connection,"SELECT * FROM `category`");
+					 while($row_category = mysqli_fetch_assoc($result_category))
 					 {
 					 $id[$i] = $row_category['id'];
 					 $category[$i] = $row_category['category'];	
@@ -266,8 +266,8 @@ return false;
 						{
                           for($k=0;$k<$v;$k++)
 						 {
-							 $sublink_result = mysql_query("SELECT `sublink` FROM `sublinks` WHERE `sublink_id`='$sublink_id[$k]'");
-							 $row_sublink = mysql_fetch_array($sublink_result);
+							 $sublink_result = mysqli_query($connection,"SELECT `sublink` FROM `sublinks` WHERE `sublink_id`='$sublink_id[$k]'");
+							 $row_sublink = mysqli_fetch_array($sublink_result);
 							 $sublink_name[$k] = $row_sublink['sublink']; 
 							 ?>
 		
@@ -287,8 +287,8 @@ return false;
                             <div class="btn-group" data-toggle="buttons">
                             <?php for($m=0;$m<$i;$m++)
                             { 
-							$result_admin_sentance = mysql_query("SELECT * FROM `for_admin` WHERE `sentance_no`='$sno[$k]' AND `$category[$m]`='1'");
-					        $count_sentance[$m] = mysql_num_rows($result_admin_sentance);		
+							$result_admin_sentance = mysqli_query($connection,"SELECT * FROM `for_admin` WHERE `sentance_no`='$sno[$k]' AND `$category[$m]`='1'");
+					        $count_sentance[$m] = mysqli_num_rows($result_admin_sentance);		
 							?>
                             <label class="btn btn-success "><?php echo $category[$m]."(".$count_sentance[$m].")"; ?>
                                 <input type="checkbox" autocomplete="off" name="check<?php echo $k.$m; ?>" value="<?php echo $id[$m]; ?>" >
@@ -355,7 +355,7 @@ while($i < 10)
 	//echo $sentance_sno[$i]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 	$p = 0;
 	$check = $user_id."finished";
-	mysql_query("UPDATE `sentance` SET `$check` = '1' WHERE `sno` = '$sentance_sno[$i]'");
+	mysqli_query($connection,"UPDATE `sentance` SET `$check` = '1' WHERE `sno` = '$sentance_sno[$i]'");
 	 
 	while($p < $category_count)
 	{
@@ -365,7 +365,7 @@ while($i < 10)
 		$sss[$p] = $cat[$i][$p] ;
 		if($val != "")
 		{
-		mysql_query("INSERT INTO `sentance_admin_checked`(`sno`, `sentance_no`, `category_names`) VALUES ('NULL','$sentance_sno[$i]','$val')");
+		mysqli_query($connection,"INSERT INTO `sentance_admin_checked`(`sno`, `sentance_no`, `category_names`) VALUES ('NULL','$sentance_sno[$i]','$val')");
 		}
 		$p++;
 	}

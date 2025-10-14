@@ -7,20 +7,20 @@
 
 <body>
  <?php
- error_reporting(0);
+ ;
  include('connection.php');
 	$ta_names  = $_POST['nam'];
 	$value  = $_POST['val'];		
 			echo '<div>';
             //echo '<h3 class="panel-title">'.$ta_names.'</h3>';
-            $qry_cw        =	mysql_query("(SELECT `meaning` FROM `common_words` WHERE `eword` = '$value' AND `name` = '$ta_names') UNION (SELECT `meaning` FROM `kalai` WHERE `eword` = '$value' AND `name` = '$ta_names')");
-			$count_wrds   = mysql_num_rows($qry_cw);
-			$qry_cw1        =	mysql_query("(SELECT `meaning` FROM `kalai_wrds` WHERE `eword` = '$value' AND `name` = '$ta_names')");
-			$count_wrds1   = mysql_num_rows($qry_cw1);	
+            $qry_cw        =	mysqli_query($connection,"(SELECT `meaning` FROM `common_words` WHERE `eword` = '$value' AND `name` = '$ta_names') UNION (SELECT `meaning` FROM `kalai` WHERE `eword` = '$value' AND `name` = '$ta_names')");
+			$count_wrds   = mysqli_num_rows($qry_cw);
+			$qry_cw1        =	mysqli_query($connection,"(SELECT `meaning` FROM `kalai_wrds` WHERE `eword` = '$value' AND `name` = '$ta_names')");
+			$count_wrds1   = mysqli_num_rows($qry_cw1);	
 			if($count_wrds >= 1 || $count_wrds1 >= 1)
 			{
 				echo '<h3 class="text-success">General Definition</h3>';
-				while($fet_cw  =	mysql_fetch_assoc($qry_cw))
+				while($fet_cw  =	mysqli_fetch_assoc($qry_cw))
 				{
 					$word_mean  = $fet_cw['meaning'];
 					
@@ -28,7 +28,7 @@
 				}
 				echo '<a href="http://www.tamilvu.org/" target="_blank"><h3 class="text-success">TVA Technical Terminology</h3></a>';
 				
-				while($fet_cw1  =	mysql_fetch_assoc($qry_cw1))
+				while($fet_cw1  =	mysqli_fetch_assoc($qry_cw1))
 				{
 					$word_mean1  = $fet_cw1['meaning'];
 					

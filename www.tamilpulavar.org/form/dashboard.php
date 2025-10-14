@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+;
 @session_start();
 $_SESSION['dash'] = "loggedin";
 $tmp_word		 =  $_SESSION['tmpwrd'];
