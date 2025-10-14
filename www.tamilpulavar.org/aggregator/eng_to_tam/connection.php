@@ -1,5 +1,4 @@
 <?php 
-mysqli_connect("localhost","ultisg2t_root1","root1");
-mysqli_select_db('ultisg2t_saiva');
+$connection = mysqli_connect("localhost","","","tamilpulavar");
 mysqli_query($connection,"set names 'utf8'");
 ?>

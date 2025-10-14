@@ -1,4 +1,4 @@
 <?php
-$connection = new mysqli("localhost","root","hariharan","tamilpulavar");
+$connection = new mysqli("localhost","","","tamilpulavar");
 $connection->query("SET NAMES 'utf8'");
 ?>
