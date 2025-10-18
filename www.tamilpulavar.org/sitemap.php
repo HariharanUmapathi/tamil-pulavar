@@ -4,7 +4,7 @@ include_once('connection.php');
 
 $query = "SELECT `hdwrd` FROM `hwrd` WHERE `sno` <= 40000";
 
-$result = mysqli_query($query);
+$result = mysqli_query($connection,$query);
 
 $base_url = "https://tamilpulavar.org/";
 

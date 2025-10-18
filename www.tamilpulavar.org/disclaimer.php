@@ -1,22 +1,23 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Disclaimer</title>
-<link rel="icon" type="image/png" href="form/assets/img/ico.png">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Disclaimer</title>
+    <link rel="icon" type="image/png" href="form/assets/img/ico.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-<div class="container">
-	<div class="row">
-    	<div class="col-md-10 col-md-offset-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
                 <p><strong>Disclaimer</strong><br />The materials on Tamilpulavar's web site are provided "as is". Tamil Dictionary makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, Tamil Dictionary does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet web site or otherwise relating to such materials or on any sites linked to this site.</p>
                 <p><strong>Revisions and Errata</strong><br />The materials appearing on this web site could include technical, typographical, or photographic errors. We does not warrant that any of the materials on its web site are accurate, complete, or current. We does not, however, make any commitment to update the materials.</p>
                 <p><strong>links</strong><br />We have not reviewed all of the sites linked to its Internet web site and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by our site. Use of any such linked web site is at the user's own risk.</p>
@@ -32,8 +33,9 @@
                 <p><strong>Google Adsense</strong><br />Some of the ads may be served by Google. Google's use of the DART cookie enables it to serve ads to Users based on their visit to our Site and other sites on the Internet. DART uses "non personally identifiable information" and does NOT track personal information about you, such as your name, email address, physical address, etc. You may opt out of the use of the DART cookie by visiting the Google ad and content network privacy policy at http://www.google.com/privacy_ads.html</p>
                 <p><strong>Changes to this privacy policy</strong><br />Tamilpulavar has the discretion to update this privacy policy at any time. When we do, we will revise the updated date at the bottom of this page. We encourage Users to frequently check this page for any changes to stay informed about how we are helping to protect the personal information we collect. You acknowledge and agree that it is your responsibility to review this privacy policy periodically and become aware of modifications.</p>
                 <p><strong>Your acceptance of these terms</strong><br />By using this Site, you signify your acceptance of this policy. If you do not agree to this policy, please do not use our Site. Your continued use of the Site following the posting of changes to this policy will be deemed your acceptance of those changes.</p>
+            </div>
         </div>
     </div>
-</div>
 </body>
+
 </html>

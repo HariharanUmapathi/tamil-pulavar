@@ -1,5 +1,4 @@
 ﻿<?php
-;
 include("connection.php");
 $val = $_POST['typeahead'];
 if($val == "")

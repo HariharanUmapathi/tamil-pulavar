@@ -2,18 +2,21 @@
 include_once("connection.php");
 session_start();
 error_reporting(E_ALL);
-if (isset($_POST['typeahead'])) {
-	$val 						= 	$_POST['typeahead'];
+
+$val = (isset($_POST['typeahead']) ?
+	$_POST['typeahead'] : (isset($_POST['typeahead1']) ?
+		$_POST['typeahead1'] : (isset($_GET['word']) ?
+			$_GET['word'] : "")));
+
+$val =	mysqli_real_escape_string($connection, $val);
+
+/** Keyboard Remembering */
+if (isset($_REQUEST['keybrd'])) {
+	$keybrd 					 =	mysqli_real_escape_string($connection, $_REQUEST['keybrd']);
+	$_SESSION['ty_key']		 =	$keybrd;
 }
-if (isset($_POST['keybrd']))
-	$keybrd 					 =	$_POST['keybrd'];
-if (isset($_GET['keybrd']))
-	$keybrd 					 =	mysqli_real_escape_string($connection, $_GET['keybrd']);
-$_SESSION['ty_key']		 =	$keybrd;
-if ($val == "")
-	$val = $_POST['typeahead1'];
-if ($val == "")
-	$val =	mysqli_real_escape_string($connection, $_GET['word']);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,13 +27,12 @@ if ($val == "")
 	<meta charset="utf-8" />
 	<link rel="icon" type="image/png" href="form/assets/img/ico.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title><?php if ($val != "") echo $val . " Meaning in Tamilpulavar";
-			else echo "Tamilpulavar"; ?></title>
+	<title><?php echo ($val != "") ?  $val . " Meaning in Tamilpulavar" : "Tamilpulavar"; ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="application-name" content="Tamil Dictionary" />
 	<meta name="author" content="admin@ultisoft.in" />
 	<meta name="robots" content="nofollow" />
-	<?php if ($val != "") { ?>
+	<?php if (isset($vall) && $val != "") { ?>
 		<meta name="description" content="<?php echo $val; ?> meaning in English,<?php echo $val; ?> meaning in tamil,<?php echo $val; ?> meaning in  J. P. Fabricius`s dictionary,<?php echo $val; ?>David McAlpin A Core vocabulary for Tamil Learn More" />
 		<meta name="keywords" content="<?php echo $val; ?> களஞ்சியம், <?php echo $val; ?> அசை தேடல்,<?php echo $val; ?> அசை,<?php echo $val; ?> கலைச்சொற்கள்,<?php echo $val; ?> meaning in English,<?php echo $val; ?> meaning in tamil,<?php echo $val; ?> meaning in medical dictionary,<?php echo $val; ?> definition,<?php echo $val; ?> meaning in legal dictionary,<?php echo $val; ?> meaning in computer dictionary,<?php echo $val; ?> meaning in law,<?php echo $val; ?> தமிழ் அகராதி,<?php echo $val; ?> meaning in J. P. Fabricius`s dictionary,<?php echo $val; ?> தமிழ் தமிழ் அகரமுதலி,<?php echo $val; ?> meaning in David McAlpin,<?php echo $val; ?>meaning in Miron Winslow,<?php echo $val; ?> சென்னைப் பல்கலைக்கழகத் தமிழ்ப் பேரகராதி,<?php echo $val; ?> பால்ஸ் அகராதி,<?php echo $val; ?> சென்னைப் பல்கலைக்கழக ஆங்கிலம் - தமிழ் அகராதி,<?php echo $val; ?> இசையினி தமிழ் அகராதி,<?php echo $val; ?> கழகத் தமிழ் அகராதி,கதிரைவேற்பிள்ளை தமிழ் அகராதி,<?php echo $val; ?> இசையினி ஆங்கிலம்-தமிழ் அகராதி,<?php echo $val; ?> சங்கச் சொல்லடைவு அகராதி,சதுரகராதி">
 	<?php } else { ?>
@@ -88,7 +90,7 @@ if ($val == "")
 
 <body>
 	<?php
-	if ($_SESSION['dash'] == "loggedin") { ?>
+	if (isset($_SESSION['dash']) && $_SESSION['dash'] == "loggedin") { ?>
 		<script>
 			$(function() {
 				$('[data-toggle="tooltip"]').tooltip();
@@ -150,8 +152,7 @@ if ($val == "")
 							</label>
 						</div>
 					</div>
-					<div id="type">
-					</div>
+
 					<div class="col-xs-3 col-xs-offset-4">
 						<button type="submit" onclick="call();" class="btn btn-default " style="border-radius:10px;">Search</button>
 					</div>
@@ -159,7 +160,8 @@ if ($val == "")
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<br />
+					<div id="type">
+					</div>
 				</div>
 			</div>
 			<div class="row">
@@ -234,14 +236,15 @@ if ($val == "")
 				</div>
 				<div id="fb-root"></div>
 				<script>
-					(function(d, s, id) {
+					/** JSSDK disabled - TODO */
+					/* (function(d, s, id) {
 						var js, fjs = d.getElementsByTagName(s)[0];
 						if (d.getElementById(id)) return;
 						js = d.createElement(s);
 						js.id = id;
 						js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
 						fjs.parentNode.insertBefore(js, fjs);
-					}(document, 'script', 'facebook-jssdk'));
+					}(document, 'script', 'facebook-jssdk')); */
 				</script>
 			</footer>
 
@@ -373,7 +376,7 @@ if ($val == "")
 					</div>
 				</div>
 				<div id="fb-root"></div>
-				<script>
+				<!-- DISABLED SDK TODO <script>
 					(function(d, s, id) {
 						var js, fjs = d.getElementsByTagName(s)[0];
 						if (d.getElementById(id)) return;
@@ -382,7 +385,7 @@ if ($val == "")
 						js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
 						fjs.parentNode.insertBefore(js, fjs);
 					}(document, 'script', 'facebook-jssdk'));
-				</script>
+				</script> -->
 				<SCRIPT language="JavaScript" src="form/tamiltyping/layout.js"></SCRIPT>
 				<SCRIPT language="JavaScript" src="form/tamiltyping/menus.js"></SCRIPT>
 				<SCRIPT language=JavaScript src="form/tamiltyping/common.js"></SCRIPT>
@@ -403,12 +406,12 @@ if ($val == "")
 					//$val1 = rand(0,58069); 
 					srand(mktime(0, 0, 0));
 					$val1 = rand(0, 58069);
-					$qry = mysqli_query($connection,"SELECT `eword`,`meaning` FROM `chennai_tam` WHERE `sno` = '$val1'") or die(mysqli_error($connection));
+					$qry = mysqli_query($connection, "SELECT `eword`,`meaning` FROM `chennai_tam` WHERE `sno` = '$val1'") or die(mysqli_error($connection));
 					$fet = mysqli_fetch_array($qry);
 					echo $fet['eword'];
 					echo "</br>";
 					echo $fet['meaning'];
-					$qry = mysqli_query($connection,"SELECT `count` FROM `visitors`");
+					$qry = mysqli_query($connection, "SELECT `count` FROM `visitors`");
 					$fet = mysqli_fetch_array($qry);
 					$visit = $fet['count'];
 					?>
@@ -420,7 +423,7 @@ if ($val == "")
 					<?php
 					//$val1 = rand(0,58069); 
 					$val11 = rand(0, 140279);
-					$qry1 = mysqli_query($connection,"SELECT `tword`,`meaning` FROM `chennai_tt` WHERE `sno` = '$val11'") or die(mysqli_error($connection));
+					$qry1 = mysqli_query($connection, "SELECT `tword`,`meaning` FROM `chennai_tt` WHERE `sno` = '$val11'") or die(mysqli_error($connection));
 					$fet1 = mysqli_fetch_array($qry1);
 					echo $fet1['tword'];
 					echo "</br>";
@@ -531,7 +534,7 @@ if ($val == "")
 </html>
 <?php
 if (!isset($_SESSION['nm'])) {
-	mysqli_query($connection,"UPDATE `visitors` SET `count` = '$visit'+1");
+	mysqli_query($connection, "UPDATE `visitors` SET `count` = '$visit'+1");
 ?>
 	<script>
 		$(window).load(function() {
@@ -543,18 +546,16 @@ if (!isset($_SESSION['nm'])) {
 $_SESSION['nm'] = rand();
 ?>
 <script language="javascript">
-	SelectedTab = 2;
-	SelectedMenu = 2;
-	showTab();
-	document.getElementById('type').appendChild(
-		document.getElementById('WholePage'));
+	SelectedTab = 1;
+	SelectedMenu = 1;
+	let menuItems = showTab();
+	document.getElementById('type').innerHTML = menuItems;
 </script>
 <script>
 	$(document).ready(function() {
 		$("#result").hide();
 		$("#result1").hide();
 		$('input.typeahead1').keyup(function() {
-			//alert("hai");
 			var searchid = $(this).val();
 			var dataString = 'key=' + searchid;
 			if (searchid != '') {
@@ -668,7 +669,7 @@ $_SESSION['nm'] = rand();
 		});
 		//alert("hai");
 		$(function() {
-			var txt = "<?php echo $val; ?>";
+			var txt = "<?php echo isset($val) ? $val : ""; ?>";
 			if (txt != "") {
 				$("#r1").html("<center><img src='img/loading_spinner.gif'/></center>");
 				if (txt.match(/[a-z]/i)) {
@@ -998,10 +999,10 @@ $_SESSION['nm'] = rand();
 		})
 	}
 </script>
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<!-- <script type="text/javascript" src="https://www.google.com/jsapi"></script> -->
 <script type="text/javascript">
-	// Load the Google Transliterate API
-	google.load("elements", "1", {
+	// Load the Google Transliterate API - TODO check transliteration api
+	/* google.load("elemnts", "1", {
 		packages: "transliteration"
 
 	});
@@ -1024,5 +1025,5 @@ $_SESSION['nm'] = rand();
 		// English and Hindi.
 		control.showControl('translControl');
 	}
-	google.setOnLoadCallback(onLoad);
+	google.setOnLoadCallback(onLoad); */
 </script>

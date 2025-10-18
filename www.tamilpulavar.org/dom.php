@@ -15,7 +15,7 @@ define('HDOM_INFO_SPACE',   3);
 define('HDOM_INFO_TEXT',    4);
 define('HDOM_INFO_INNER',   5);
 define('HDOM_INFO_OUTER',   6);
-define('HDOM_INFO_ENDSPACE',7);
+define('HDOM_INFO_ENDSPACE', 7);
 define('DEFAULT_TARGET_CHARSET', 'UTF-8');
 define('DEFAULT_BR_TEXT', "\r\n");
 define('DEFAULT_SPAN_TEXT', " ");
@@ -24,7 +24,7 @@ define('MAX_FILE_SIZE', 600000);
 // -----------------------------------------------------------------------------
 // get html dom from file
 // $maxlen is defined in the code as PHP_STREAM_COPY_ALL which is defined as -1.
-function file_get_html($url, $use_include_path = false, $context=null, $offset = -1, $maxLen=-1, $lowercase = true, $forceTagsClosed=true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT)
+function file_get_html($url, $use_include_path = false, $context = null, $offset = -1, $maxLen = -1, $lowercase = true, $forceTagsClosed = true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN = true, $defaultBRText = DEFAULT_BR_TEXT, $defaultSpanText = DEFAULT_SPAN_TEXT)
 {
     // We DO force the tags to be terminated.
     $dom = new simple_html_dom(null, $lowercase, $forceTagsClosed, $target_charset, $stripRN, $defaultBRText, $defaultSpanText);
@@ -32,12 +32,10 @@ function file_get_html($url, $use_include_path = false, $context=null, $offset =
     $contents = file_get_contents($url, $use_include_path, $context, $offset);
     // Paperg - use our own mechanism for getting the contents as we want to control the timeout.
     //$contents = retrieve_url_contents($url);
-    if (empty($contents) || strlen($contents) > MAX_FILE_SIZE)
-    {
+    if (empty($contents) || strlen($contents) > MAX_FILE_SIZE) {
         return false;
     }
     // The second parameter can force the selectors to all be lowercase.
     $dom->load($contents, $lowercase, $stripRN);
     return $dom;
 }
-?>
