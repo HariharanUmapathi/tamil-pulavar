@@ -4,7 +4,14 @@ RewriteBase /
 RewriteRule ^(.*)/$ $1 [R=301,L]
 RewriteCond %{THE_REQUEST} /(?:index\.php)?\?word=([^\s&]+) [NC]
 RewriteRule ^ /%1? [R=302,L,NE]
+# 404 Displaying for physically not shown media files only
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} \.(png|jpe?g|gif)$ [NC]
+RewriteRule ^ - [R=404,L]
+# This rewrite rule sell all other not found filenames to index.php 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d 
 RewriteCond %{REQUEST_FILENAME} !-l
 RewriteRule ^(.+?)/?$ /index.php?word=$1 [L,QSA]
+# Disableing public access for particular pages 
+RewriteRule ^login\.php$ - [R=404,L] 

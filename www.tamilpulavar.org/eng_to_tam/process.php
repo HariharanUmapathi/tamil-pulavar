@@ -22,7 +22,7 @@ else
 
 $verb			    =	end($arr_sent);
 $sub			     = 	$arr_sent[0];
-$sub			     =	mysqli_real_escape_string($sub);
+$sub			     =	mysqli_real_escape_string($connection,$sub);
 $sub_en		      =	mysqli_query($connection,"SELECT * FROM `word` WHERE `tword` = '$sub' ")or die(mysqli_error($connection));
 $s_e		         =	mysqli_fetch_array($sub_en);
 $verb_wrd			=	T2R($verb);

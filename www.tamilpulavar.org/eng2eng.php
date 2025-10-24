@@ -77,7 +77,7 @@
 
 
 
-	function call_comwrd($value,$connection)
+	function call_comwrd($value, $connection)
 	{
 	?>
 		<?php /*?>$result_c_name = mysqli_query($connection,"SELECT DISTINCT `name` FROM `common_words` ");
@@ -117,13 +117,13 @@
 <?php */ ?>
 
 		<?php
-		$result_c_name1 = mysqli_query($connection,"SELECT DISTINCT `name` FROM `common_words` ");
+		$result_c_name1 = mysqli_query($connection, "SELECT DISTINCT `name` FROM `common_words` ");
 		while ($row1 = mysqli_fetch_array($result_c_name1)) {
 			$name_ter1[]  =	$row1['name'];
 			$ta_names	 =	$row1['name'];
-			$qry_cw       =	mysqli_query($connection,"(SELECT `eword` FROM `common_words` WHERE `meaning` LIKE '%$value%' AND `name` = '$ta_names')");
+			$qry_cw       =	mysqli_query($connection, "(SELECT `eword` FROM `common_words` WHERE `meaning` LIKE '%$value%' AND `name` = '$ta_names')");
 			$count_wrds   =	mysqli_num_rows($qry_cw);
-			$qry_cw1      =	mysqli_query($connection,"(SELECT `eword` FROM `kalai_wrds` WHERE `meaning` LIKE '%$value%' AND `name` = '$ta_names')");
+			$qry_cw1      =	mysqli_query($connection, "(SELECT `eword` FROM `kalai_wrds` WHERE `meaning` LIKE '%$value%' AND `name` = '$ta_names')");
 			$count_wrds1  =	mysqli_num_rows($qry_cw1);
 			if ($count_wrds >= 1 || $count_wrds1 >= 1) {
 				//echo '<h3 class="text-success">Common</h3>';
