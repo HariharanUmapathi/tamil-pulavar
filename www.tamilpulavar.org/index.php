@@ -1,7 +1,5 @@
 <?php
 include_once("connection.php");
-session_start();
-error_reporting(E_ALL);
 
 $val = (isset($_POST['typeahead']) ?
 	$_POST['typeahead'] : (isset($_POST['typeahead1']) ?
@@ -13,9 +11,15 @@ $val =	mysqli_real_escape_string($connection, $val);
 /** Keyboard Remembering */
 if (isset($_REQUEST['keybrd'])) {
 	$keybrd 					 =	mysqli_real_escape_string($connection, $_REQUEST['keybrd']);
-	$_SESSION['ty_key']		 =	$keybrd;
+	$_SESSION['ty_key']		     =	$keybrd;
+} else {
+	$_SESSION['ty_key'] = "";
 }
-
+if (isset($_SESSION['name'])) {
+	$username = $_SESSION['name'];
+} else {
+	$username = "Pulavar";
+}
 
 ?>
 <!DOCTYPE html>
@@ -120,7 +124,7 @@ if (isset($_REQUEST['keybrd'])) {
 			<div class="row" style="background-color:#fbef9d;">
 				<div class="col-xs-12">
 					<p class="bt_show pull-left" style="margin-top:5px; font-family:'Arial Black', Gadget, sans-serif; color:#F00; display:none;">Hi,&nbsp;<?php echo $_SESSION['name']; ?> &nbsp;</p>
-					<button class="btn bt_hide" id="bt"><a href="login.php" style="text-decoration:none;">Login</a></button>
+					<button class="btn bt_hide d-none" id="bt"><a href="login.php" style="text-decoration:none;">Login</a></button>
 					<button class="btn bt_show" id="bt" style="display:none;"><a href="form/dashboard.php" style="text-decoration:none; color:#FFF"><i class="fa fa-cog fa-spin fa-lg" aria-hidden="true"></i> Dashboard</a></button>
 					<button class="btn" id="bt"><a href="donate.php" style="text-decoration:none;">Donate</a></button>
 				</div>
@@ -295,8 +299,8 @@ if (isset($_REQUEST['keybrd'])) {
 						</div>
 					</div>
 					<div class="col-md-2  pull-right">
-						<p class="bt_show pull-left" style="margin-top:5px; font-family:'Arial Black', Gadget, sans-serif; color:#F00; display:none;">Hi,&nbsp;<?php echo $_SESSION['name']; ?> &nbsp;</p><br><br>
-						<button data-toggle="modal" data-target="#squarespaceModal_login" class="btn bt_hide" id="bt">Login</button>
+						<p class="bt_show pull-left" style="margin-top:5px; font-family:'Arial Black', Gadget, sans-serif; color:#F00; display:none;">Hi,&nbsp;<?php echo $username; ?> &nbsp;</p><br><br>
+						<button data-toggle="modal" data-target="#squarespaceModal_login" class="btn bt_hide" id="bt" style='display:none'>Login</button>
 						<button class="btn bt_show" id="bt" style="display:none;"><a href="form/dashboard.php" style="text-decoration:none; color:#FFF;"><i class="fa fa-cog fa-spin fa-lg" aria-hidden="true"></i> Dashboard</a></button>
 						<button data-toggle="modal" data-target="#squarespaceModal_donate" class="btn" id="bt">Donate</button>
 					</div>
