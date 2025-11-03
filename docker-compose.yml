@@ -1,0 +1,22 @@
+version: "3.0"
+services:
+  php:
+    container_name: tamilpulavar
+    image: php-fpm-mysqli
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./www.tamilpulavar.org:/var/www/html/www.tamilpulavar.org
+      - ./www.conf:/usr/local/etc/php-fpm.d/www.conf
+      - ./error.log:/var/log/fpm-php.www.log
+      - ./.env:/var/www/html/.env
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+    environment:
+      DB_HOST: "172.17.0.1" 
+      DB_USER: username 
+      DB_PASS: password
+      DB_NAME: tamilpulavar
+      MAINTAINANCE: "false"
+      ENVIRONMENT: production
+      ERROR_LOG: "/home/hariharan/open-workspace/tamil-pulavar/www.tamilpulavar.org/error.log" 
