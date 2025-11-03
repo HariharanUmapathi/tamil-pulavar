@@ -390,8 +390,8 @@ if (isset($_SESSION['name'])) {
 						fjs.parentNode.insertBefore(js, fjs);
 					}(document, 'script', 'facebook-jssdk'));
 				</script> -->
-				<SCRIPT language="JavaScript" src="form/tamiltyping/layout.js"></SCRIPT>
-				<SCRIPT language="JavaScript" src="form/tamiltyping/menus.js"></SCRIPT>
+				<!-- <SCRIPT language="JavaScript" src="form/tamiltyping/layout.js"></SCRIPT>
+				<SCRIPT language="JavaScript" src="form/tamiltyping/menus.js"></SCRIPT> -->
 				<SCRIPT language=JavaScript src="form/tamiltyping/common.js"></SCRIPT>
 				<SCRIPT language=JavaScript src="form/tamiltyping/tamil.js"></SCRIPT>
 				<!-- Your share button code -->
